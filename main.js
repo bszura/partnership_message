@@ -30,7 +30,7 @@ client.once('ready', async () => {
     const send = async () => {
       const channel = await client.channels.fetch(channelId).catch(() => null);
       if (channel) {
-        await channel.send('message');
+        await channel.send(message);
         console.log(`[${new Date().toLocaleTimeString()}] Wysłano na kanał ${channelId}`);
       } else {
         console.error(`Nie znaleziono kanału ${channelId}`);

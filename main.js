@@ -21,10 +21,16 @@ client.once('ready', async () => {
   console.log(`Bot ${client.user.tag} jest gotowy.`);
 
   const sendToChannel = async (channelId, interval) => {
+    const message = `
+    # PARTNERSTWA PV
+    • 2 serwery
+    • szybko odpowiadam
+    • partnerstwa realizuję osobiście, nie przez bota
+    `
     const send = async () => {
       const channel = await client.channels.fetch(channelId).catch(() => null);
       if (channel) {
-        await channel.send('# Partnerstwa PV');
+        await channel.send('message');
         console.log(`[${new Date().toLocaleTimeString()}] Wysłano na kanał ${channelId}`);
       } else {
         console.error(`Nie znaleziono kanału ${channelId}`);

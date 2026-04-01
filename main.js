@@ -20,29 +20,24 @@ client.once('ready', async () => {
   console.log(`Zalogowano jako ${client.user.tag}!`);
   console.log(`Bot ${client.user.tag} jest gotowy.`);
 
-  const sendToChannel = async (channelId, interval) => {
-    const message = `
-    # PARTNERSTWA PV
-    • 2 serwery
-    • szybko odpowiadam
-    • partnerstwa realizuję osobiście, nie przez bota
-    `
+  const sendToChannel = async (channelId, content, interval) => {
     const send = async () => {
       const channel = await client.channels.fetch(channelId).catch(() => null);
       if (channel) {
-        await channel.send(message);
+        await channel.send(content);
         console.log(`[${new Date().toLocaleTimeString()}] Wysłano na kanał ${channelId}`);
       } else {
         console.error(`Nie znaleziono kanału ${channelId}`);
       }
     };
 
-    await send(); // od razu przy starcie
+    await send();
     setInterval(send, interval);
   };
 
-  await sendToChannel('1346609247869337701', 61 * 60 * 1000);  // co 61 minut
-  await sendToChannel('1463018298471092434', 121 * 60 * 1000); // co 121 minut
+  await sendToChannel('1346609247869337701', '# Partnerstwa PV', 61 * 60 * 1000);
+  await sendToChannel('1463018298471092434', '# Partnerstwa PV', 121 * 60 * 1000);
+  await sendToChannel('1354863654540935188', '# Oferuję usługę tworzenia botów w atrakcyjnych cenach. Zapraszam do kontaktu PV', 60 * 60 * 1000);
 });
 
 client.on('error', (error) => console.error('Błąd Discorda:', error));

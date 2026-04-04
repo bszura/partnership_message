@@ -68,20 +68,20 @@ client.once('ready', async () => {
 });
 
 const ad1 = `
-## `🛒` **CITSH0P** × CENTRUM ZAKUPÓW
+## 🛒 **CITSH0P** × CENTRUM ZAKUPÓW
 
-`🎯` **× Dlaczego my?**
+🎯 **× Dlaczego my?**
 
-`⏰` **×** Najdłużej na rynku!
+⏰ **×** Najdłużej na rynku!
 -# Jesteśmy na rynku od ponad roku!
 
-`💸` **×** Najtaniej w Polsce!
+💸 **×** Najtaniej w Polsce!
 -# Nasz cennik jest najbardziej korzystny!
 
-`✅` **×** Najbardziej zaufany!
+✅ **×** Najbardziej zaufany!
 -# Posiadamy legitne, doświadczone grono sprzedawców!
 
-`🫡` **×** Najwyższa jakość!
+🫡 **×** Najwyższa jakość!
 -# Większość naszych produktów jest objęta gwarancją!
 
 > **Zapraszamy Cię do naszej społeczności!**

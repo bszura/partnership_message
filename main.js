@@ -224,7 +224,6 @@ const pendingRenewals = new Map();
 // ===================== FUNKCJE =====================
 
 function parseDateTime(timeStr, dateStr) {
-  // timeStr: "12:41", dateStr: "5.04.2026"
   try {
     const [hours, minutes] = timeStr.split(':').map(Number);
     const [day, month, year] = dateStr.split('.').map(Number);
@@ -268,28 +267,27 @@ client.on('messageCreate', async (message) => {
 
   if (isMe) {
 
-    // !reklama — wyślij wszystkie reklamy rozmówcy
-    if (content === '!reklama') {
+    // reklama — wyślij wszystkie reklamy rozmówcy
+    if (content === 'reklama') {
       for (const ad of ALL_ADS) {
         await message.channel.send(ad);
-        await new Promise(r => setTimeout(r, 1500));
+        await new Promise(r => setTimeout(r, 5000));
       }
-      console.log(`[!reklama] Wysłano ${ALL_ADS.length} reklam`);
+      console.log(`[reklama] Wysłano ${ALL_ADS.length} reklam`);
       return;
     }
 
-    // !wstaw HH:MM DD.MM.YYYY — wstaw reklamy od podanego czasu
-    if (content.startsWith('!wstaw')) {
+    // wstaw HH:MM DD.MM.YYYY — wstaw reklamy od podanego czasu
+    if (content.startsWith('wstaw')) {
       const parts = content.split(' ');
-      // oczekiwany format: !wstaw 12:41 5.04.2026
       if (parts.length !== 3) {
-        await message.channel.send("❕ Użycie: `!wstaw 12:41 5.04.2026`");
+        await message.channel.send("❕ Użycie: `wstaw 12:41 5.04.2026`");
         return;
       }
 
       const fromTimestamp = parseDateTime(parts[1], parts[2]);
       if (!fromTimestamp || isNaN(fromTimestamp)) {
-        await message.channel.send("❕ Nieprawidłowy format daty/godziny. Użyj: `!wstaw 12:41 5.04.2026`");
+        await message.channel.send("❕ Nieprawidłowy format. Użyj: `wstaw 12:41 5.04.2026`");
         return;
       }
 
@@ -299,7 +297,6 @@ client.on('messageCreate', async (message) => {
         return;
       }
 
-      // Pobierz historię wiadomości (max 100)
       const messages = await message.channel.messages.fetch({ limit: 100 });
 
       const ads = messages
@@ -315,7 +312,6 @@ client.on('messageCreate', async (message) => {
         return;
       }
 
-      // Wstaw na wszystkie kanały partnerskie
       for (const channelId of PARTNER_CHANNELS) {
         const partnerChannel = await client.channels.fetch(channelId).catch(() => null);
         if (!partnerChannel) {
@@ -324,17 +320,17 @@ client.on('messageCreate', async (message) => {
         }
         for (const [, ad] of ads) {
           await partnerChannel.send(`${ad.content}\n\nPartnerstwo z: <@${recipientId}>`);
-          await new Promise(r => setTimeout(r, 1000));
+          await new Promise(r => setTimeout(r, 2000));
         }
       }
 
       await message.channel.send(`✅ Wstawiono ${ads.size} reklamę/reklamy (od ${parts[2]} ${parts[1]}) na ${PARTNER_CHANNELS.length} kanałów.`);
-      console.log(`[!wstaw] Wstawiono ${ads.size} reklam od ${parts[2]} ${parts[1]}`);
+      console.log(`[wstaw] Wstawiono ${ads.size} reklam od ${parts[2]} ${parts[1]}`);
       return;
     }
 
-    // !odnowa — zapytaj rozmówcę czy chce przypomnienie za 5 dni
-    if (content === '!odnowa') {
+    // odnowa — zapytaj rozmówcę czy chce przypomnienie za 5 dni
+    if (content === 'odnowa') {
       const recipientId = message.channel.recipient?.id;
       if (!recipientId) {
         await message.channel.send("❕ Nie mogę określić rozmówcy.");
@@ -343,14 +339,14 @@ client.on('messageCreate', async (message) => {
 
       pendingRenewals.set(recipientId, true);
       await message.channel.send("🔔 Czy chcesz za 5 dni znowu nawiązać partnerstwo? Wpisz **tak** lub **nie**.");
-      console.log(`[!odnowa] Zapytano ${recipientId}`);
+      console.log(`[odnowa] Zapytano ${recipientId}`);
       return;
     }
 
     return;
   }
 
-  // Odpowiedź rozmówcy na !odnowa
+  // Odpowiedź rozmówcy na odnowa
   if (pendingRenewals.has(message.author.id)) {
     const answer = content.toLowerCase();
 

@@ -136,26 +136,7 @@ const ad4 = `# 💱 WITAJ NA WYMIENIASZ 💱
 ## AKTUALNIE TRWA KONKURS NA 50 PLN
 https://discord.gg/wymieniasz`;
 
-const ad5 = `## 💥 💰 ZGARNIJ KASĘ ZA OPINIĘ! 💰💥
-** 3 ZŁOTE za JEDNĄ OPINIĘ – LEGALNIE, SZYBKO, BEZ KOMPLIKACJI! 🔥**
-👀 Masz 2 minuty?
-💬 Masz coś do powiedzenia?
-📲 Masz Discorda?
-\`TO ZARABIASZ!\`
-Nie musisz inwestować ani złotówki – wystarczy, że podzielisz się swoją opinią!
-**✅ CO OFERUJEMY?**
-🔹 3 ZŁ za każdą zaakceptowaną opinię
-🔹 Proste zadania, zero ściemy
-🔹 Płacimy na: BLIK  / PayPal / Kod Blik/LTC
-🔹 Nowe zadania codziennie!
-🔹 Przyjazna ekipa i pomoc dla nowych
-**💡 JAK DOŁĄCZYĆ?**
-Kliknij link do serwera Discord 👉 https://discord.gg/AEUuHhh38Q
-Przeczytaj zasady i zacznij zarabiać!
-🌟 Już wiele użytkowników z nami zarabia 
-💸 Nie trać czasu – twoja opinia = twoje pieniądze!
-**🔔 DOŁĄCZ TERAZ I ZGARNIJ SWOJE PIERWSZE 3 ZŁ W PARĘ MINUT! 🔔**
-**Szukamy Realizatorow partnerstw 80gr/Partnerstwo**`;
+
 
 const ad6 = `## \`🛒\` **CITSH0P** × CENTRUM ZAKUPÓW
 \`🎯\` **× Dlaczego my?**
@@ -192,17 +173,9 @@ const ad7 = `#  🛒 SZYBKI ZAKUP 🛒
 \`👋\` **⨯ Do zobaczenia na serwerze!** 
 \`🔗\` [Dołącz teraz!](https://discord.gg/szybkizakup)`;
 
-const ad8 = `## Serwer gdzie tworzymy boty!
-> Hej chciałbyś na swoim discordzie mieć autorskiego bota gdzie wszystko jest **tak jak chcesz?** 
-* Benefity \`💻\`
-- **Szybki kontakt** \`📞\`
-- **Profesjonalizm** \`📋\`
-- **Szybki czas realizacji** \`⌛\`
-- **Pozytwne opinie** \`💚\`
-> Dołącz na naszego discorda już teraz!
-> https://discord.gg/dcboty`;
 
-const ALL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8];
+
+const ALL_ADS = [ad1, ad2, ad3, ad4, ad6, ad7];
 
 // ===================== KANAŁY =====================
 

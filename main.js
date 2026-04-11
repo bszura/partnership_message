@@ -202,7 +202,7 @@ const ad8 = `## Serwer gdzie tworzymy boty!
 > Dołącz na naszego discorda już teraz!
 > https://discord.gg/dcboty`;
 
-const ALL_ADS = [ad1, ad2, ad3, ad4, ad6, ad7];
+const ALL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8];
 
 // ===================== KANAŁY =====================
 
@@ -216,7 +216,7 @@ const PARTNER_CHANNELS = [
   '1296167863551529033', // 7
 ];
 
-const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000; // 5 dni
+const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000;
 const pendingRenewals = new Map();
 
 // ===================== OCHRONA PRZED BANEM =====================
@@ -343,19 +343,28 @@ client.on('messageCreate', async (message) => {
         return;
       }
 
+      const adsArray = [...userAds.values()];
+
       for (const channelId of selectedChannelIds) {
-        const partnerChannel = await client.channels.fetch(channelId).catch(() => null);
-        if (!partnerChannel) {
-          console.error(`Nie znaleziono kanału ${channelId}`);
-          continue;
-        }
-        for (const [, ad] of userAds) {
-          await safeSend(partnerChannel, `${ad.content}\n-# Partnerstwo z <@${recipientId}>`);
+        try {
+          const partnerChannel = await client.channels.fetch(channelId).catch(() => null);
+          if (!partnerChannel) {
+            console.error(`[wstaw] Nie znaleziono kanału ${channelId}`);
+            continue;
+          }
+          console.log(`[wstaw] Wysyłam na kanał ${channelId}...`);
+          for (const ad of adsArray) {
+            await safeSend(partnerChannel, `${ad.content}\n-# Partnerstwo z <@${recipientId}>`);
+            console.log(`[wstaw] Wysłano reklamę na kanał ${channelId}`);
+          }
+          console.log(`[wstaw] Zakończono kanał ${channelId}`);
+        } catch (e) {
+          console.error(`[wstaw] Błąd dla kanału ${channelId}:`, e.message);
         }
       }
 
-      await message.channel.send(`✅ Wstawiono ${userAds.size} reklamę/reklamy użytkownika na kanały nr [${channelIndexes.join(', ')}].`);
-      console.log(`[wstaw] Wstawiono ${userAds.size} reklam na kanały ${channelIndexes.join(', ')}`);
+      await message.channel.send(`✅ Wstawiono ${adsArray.length} reklamę/reklamy użytkownika na kanały nr [${channelIndexes.join(', ')}].`);
+      console.log(`[wstaw] Gotowe. Wstawiono ${adsArray.length} reklam na kanały ${channelIndexes.join(', ')}`);
       return;
     }
 

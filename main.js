@@ -216,6 +216,9 @@ const PARTNER_CHANNELS = [
   '1296167863551529033', // 7
 ];
 
+const WATCH_CHANNEL_ID = '1346609247869337701';
+const messagedUsers = new Set(); // nigdy nie czyścimy — raz i koniec
+
 const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000;
 const pendingRenewals = new Map();
 
@@ -281,6 +284,29 @@ function startReminderChecker() {
 // ===================== EVENTY =====================
 
 client.on('messageCreate', async (message) => {
+  // ===== OBSERWOWANIE KANAŁU PARTNERSKIEGO =====
+  if (message.channel.id === WATCH_CHANNEL_ID && !message.author.bot && message.createdTimestamp >= botStartTime) {
+    const authorId = message.author.id;
+
+    if (messagedUsers.has(authorId)) return;
+    messagedUsers.add(authorId);
+
+    console.log(`[watch] Nowa wiadomość od ${authorId}, czekam 5 minut...`);
+
+    setTimeout(async () => {
+      try {
+        const user = await client.users.fetch(authorId);
+        const dm = await user.createDM();
+        await dm.send("Partnerstwo?");
+        console.log(`[watch] Wysłano DM do ${authorId}`);
+      } catch (e) {
+        console.error(`[watch] Błąd wysyłania DM do ${authorId}:`, e.message);
+      }
+    }, 5 * 60 * 1000);
+
+    return;
+  }
+
   if (message.guild) return;
   if (message.createdTimestamp < botStartTime) return;
 

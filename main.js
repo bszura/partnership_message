@@ -217,7 +217,7 @@ const PARTNER_CHANNELS = [
 ];
 
 const WATCH_CHANNEL_ID = '1346609247869337701';
-const messagedUsers = new Set(); // nigdy nie czyścimy — raz i koniec
+const messagedUsers = new Set();
 
 const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000;
 const pendingRenewals = new Map();
@@ -287,12 +287,9 @@ client.on('messageCreate', async (message) => {
   // ===== OBSERWOWANIE KANAŁU PARTNERSKIEGO =====
   if (message.channel.id === WATCH_CHANNEL_ID && !message.author.bot && message.createdTimestamp >= botStartTime) {
     const authorId = message.author.id;
-
     if (messagedUsers.has(authorId)) return;
     messagedUsers.add(authorId);
-
     console.log(`[watch] Nowa wiadomość od ${authorId}, czekam 5 minut...`);
-
     setTimeout(async () => {
       try {
         const user = await client.users.fetch(authorId);
@@ -303,7 +300,6 @@ client.on('messageCreate', async (message) => {
         console.error(`[watch] Błąd wysyłania DM do ${authorId}:`, e.message);
       }
     }, 5 * 60 * 1000);
-
     return;
   }
 
@@ -324,6 +320,7 @@ client.on('messageCreate', async (message) => {
     }
 
     if (content.startsWith('wstaw')) {
+      const commandTimestamp = message.createdTimestamp; // moment wpisania komendy
       const parts = content.split(' ');
       if (parts.length < 4) {
         await message.channel.send("❕ Użycie: `wstaw 12:41 5.04.2026 1, 2, 3` (numery kanałów z listy PARTNER_CHANNELS)");
@@ -360,7 +357,8 @@ client.on('messageCreate', async (message) => {
         .filter(m =>
           m.author.id === recipientId &&
           m.content.includes('https://discord.gg/') &&
-          m.createdTimestamp >= fromTimestamp
+          m.createdTimestamp >= fromTimestamp &&
+          m.createdTimestamp <= commandTimestamp // tylko do momentu wpisania komendy
         )
         .sort((a, b) => a.createdTimestamp - b.createdTimestamp);
 
@@ -400,7 +398,6 @@ client.on('messageCreate', async (message) => {
         await message.channel.send("❕ Nie mogę określić rozmówcy.");
         return;
       }
-
       pendingRenewals.set(recipientId, true);
       await message.channel.send("🔔 Czy chcesz za 5 dni znowu nawiązać partnerstwo? Wpisz **tak** lub **nie**.");
       console.log(`[odnowa] Zapytano ${recipientId}`);
@@ -412,7 +409,6 @@ client.on('messageCreate', async (message) => {
 
   if (pendingRenewals.has(message.author.id)) {
     const answer = content.toLowerCase();
-
     if (answer.includes('tak')) {
       const remindAt = Date.now() + REMINDER_DELAY;
       await setReminder(message.author.id, remindAt);

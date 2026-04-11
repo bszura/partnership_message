@@ -136,7 +136,26 @@ const ad4 = `# 💱 WITAJ NA WYMIENIASZ 💱
 ## AKTUALNIE TRWA KONKURS NA 50 PLN
 https://discord.gg/wymieniasz`;
 
-
+const ad5 = `## 💥 💰 ZGARNIJ KASĘ ZA OPINIĘ! 💰💥
+** 3 ZŁOTE za JEDNĄ OPINIĘ – LEGALNIE, SZYBKO, BEZ KOMPLIKACJI! 🔥**
+👀 Masz 2 minuty?
+💬 Masz coś do powiedzenia?
+📲 Masz Discorda?
+\`TO ZARABIASZ!\`
+Nie musisz inwestować ani złotówki – wystarczy, że podzielisz się swoją opinią!
+**✅ CO OFERUJEMY?**
+🔹 3 ZŁ za każdą zaakceptowaną opinię
+🔹 Proste zadania, zero ściemy
+🔹 Płacimy na: BLIK  / PayPal / Kod Blik/LTC
+🔹 Nowe zadania codziennie!
+🔹 Przyjazna ekipa i pomoc dla nowych
+**💡 JAK DOŁĄCZYĆ?**
+Kliknij link do serwera Discord 👉 https://discord.gg/AEUuHhh38Q
+Przeczytaj zasady i zacznij zarabiać!
+🌟 Już wiele użytkowników z nami zarabia 
+💸 Nie trać czasu – twoja opinia = twoje pieniądze!
+**🔔 DOŁĄCZ TERAZ I ZGARNIJ SWOJE PIERWSZE 3 ZŁ W PARĘ MINUT! 🔔**
+**Szukamy Realizatorow partnerstw 80gr/Partnerstwo**`;
 
 const ad6 = `## \`🛒\` **CITSH0P** × CENTRUM ZAKUPÓW
 \`🎯\` **× Dlaczego my?**
@@ -173,9 +192,17 @@ const ad7 = `#  🛒 SZYBKI ZAKUP 🛒
 \`👋\` **⨯ Do zobaczenia na serwerze!** 
 \`🔗\` [Dołącz teraz!](https://discord.gg/szybkizakup)`;
 
+const ad8 = `## Serwer gdzie tworzymy boty!
+> Hej chciałbyś na swoim discordzie mieć autorskiego bota gdzie wszystko jest **tak jak chcesz?** 
+* Benefity \`💻\`
+- **Szybki kontakt** \`📞\`
+- **Profesjonalizm** \`📋\`
+- **Szybki czas realizacji** \`⌛\`
+- **Pozytwne opinie** \`💚\`
+> Dołącz na naszego discorda już teraz!
+> https://discord.gg/dcboty`;
 
-
-const ALL_ADS = [ad1, ad2, ad3, ad4, ad6, ad7];
+const ALL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8];
 
 // ===================== KANAŁY =====================
 
@@ -194,7 +221,6 @@ const pendingRenewals = new Map();
 
 // ===================== OCHRONA PRZED BANEM =====================
 
-// Losowe opóźnienie między MIN a MAX ms — naśladuje ludzkie zachowanie
 const DELAY_MIN = 4000;
 const DELAY_MAX = 9000;
 
@@ -203,10 +229,9 @@ function randomDelay() {
   return new Promise(r => setTimeout(r, ms));
 }
 
-// Globalny licznik wiadomości — pauza co N wiadomości
 let messagesSentCount = 0;
-const PAUSE_EVERY = 5;        // pauza co 5 wiadomości
-const PAUSE_DURATION = 20000; // 20 sekund pauzy
+const PAUSE_EVERY = 5;
+const PAUSE_DURATION = 20000;
 
 async function safeSend(channel, content) {
   messagesSentCount++;
@@ -264,7 +289,6 @@ client.on('messageCreate', async (message) => {
 
   if (isMe) {
 
-    // reklama — wyślij wszystkie reklamy rozmówcy
     if (content === 'reklama') {
       for (const ad of ALL_ADS) {
         await safeSend(message.channel, ad);
@@ -273,7 +297,6 @@ client.on('messageCreate', async (message) => {
       return;
     }
 
-    // wstaw HH:MM DD.MM.YYYY 1, 2, 3 — wyślij wszystkie reklamy użytkownika na wybrane kanały
     if (content.startsWith('wstaw')) {
       const parts = content.split(' ');
       if (parts.length < 4) {
@@ -327,7 +350,7 @@ client.on('messageCreate', async (message) => {
           continue;
         }
         for (const [, ad] of userAds) {
-          await safeSend(partnerChannel, ad.content);
+          await safeSend(partnerChannel, `${ad.content}\n-# Partnerstwo z <@${recipientId}>`);
         }
       }
 
@@ -336,7 +359,6 @@ client.on('messageCreate', async (message) => {
       return;
     }
 
-    // odnowa — zapytaj rozmówcę czy chce przypomnienie za 5 dni
     if (content === 'odnowa') {
       const recipientId = message.channel.recipient?.id;
       if (!recipientId) {
@@ -353,7 +375,6 @@ client.on('messageCreate', async (message) => {
     return;
   }
 
-  // Odpowiedź rozmówcy na odnowa
   if (pendingRenewals.has(message.author.id)) {
     const answer = content.toLowerCase();
 

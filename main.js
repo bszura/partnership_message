@@ -276,19 +276,33 @@ client.on('messageCreate', async (message) => {
       return;
     }
 
-    // wstaw HH:MM DD.MM.YYYY — wstaw reklamy od podanego czasu
+    // wstaw HH:MM DD.MM.YYYY 1,2,3 — wstaw wybrane reklamy od podanego czasu
     if (content.startsWith('wstaw')) {
       const parts = content.split(' ');
-      if (parts.length !== 3) {
-        await message.channel.send("❕ Użycie: `wstaw 12:41 5.04.2026`");
+      if (parts.length < 4) {
+        await message.channel.send("❕ Użycie: `wstaw 12:41 5.04.2026 1, 2, 3`");
         return;
       }
 
       const fromTimestamp = parseDateTime(parts[1], parts[2]);
       if (!fromTimestamp || isNaN(fromTimestamp)) {
-        await message.channel.send("❕ Nieprawidłowy format. Użyj: `wstaw 12:41 5.04.2026`");
+        await message.channel.send("❕ Nieprawidłowy format. Użyj: `wstaw 12:41 5.04.2026 1, 2, 3`");
         return;
       }
+
+      // Parsuj numery reklam z reszty tekstu (np. "2, 5, 8")
+      const adIndexesRaw = parts.slice(3).join('');
+      const adIndexes = adIndexesRaw
+        .split(',')
+        .map(n => parseInt(n.trim()))
+        .filter(n => !isNaN(n) && n >= 1 && n <= ALL_ADS.length);
+
+      if (adIndexes.length === 0) {
+        await message.channel.send(`❕ Podaj prawidłowe numery reklam (1-${ALL_ADS.length}).`);
+        return;
+      }
+
+      const selectedAds = adIndexes.map(i => ALL_ADS[i - 1]);
 
       const recipientId = message.channel.recipient?.id;
       if (!recipientId) {
@@ -317,14 +331,15 @@ client.on('messageCreate', async (message) => {
           console.error(`Nie znaleziono kanału ${channelId}`);
           continue;
         }
-        for (const [, ad] of ads) {
-          await partnerChannel.send(`${ad.content}\n\nPartnerstwo z: <@${recipientId}>`);
+        if (partnerChannel.guild?.id === '1177704592079867916') continue;
+        for (const ad of selectedAds) {
+          await partnerChannel.send(ad);
           await new Promise(r => setTimeout(r, 2000));
         }
       }
 
-      await message.channel.send(`✅ Wstawiono ${ads.size} reklamę/reklamy (od ${parts[2]} ${parts[1]}) na ${PARTNER_CHANNELS.length} kanałów.`);
-      console.log(`[wstaw] Wstawiono ${ads.size} reklam od ${parts[2]} ${parts[1]}`);
+      await message.channel.send(`✅ Wstawiono reklamy nr [${adIndexes.join(', ')}] na ${PARTNER_CHANNELS.length} kanałów.`);
+      console.log(`[wstaw] Wstawiono reklamy ${adIndexes.join(', ')}`);
       return;
     }
 

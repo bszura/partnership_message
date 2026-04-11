@@ -80,7 +80,7 @@ const PARTNER_CHANNELS = [
 const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000;
 const pendingRenewals = new Map();
 
-// ===================== OCHRONA =====================
+// ===================== SAFE SEND =====================
 
 const DELAY_MIN = 4000;
 const DELAY_MAX = 9000;
@@ -105,7 +105,7 @@ async function safeSend(channel, content) {
   await channel.send(content);
 }
 
-// ===================== REMINDERY =====================
+// ===================== REMINDER =====================
 
 function startReminderChecker() {
   setInterval(async () => {
@@ -157,7 +157,7 @@ client.on('messageCreate', async (message) => {
       const parts = content.split(' ');
 
       const fromTimestamp = Date.parse(`${parts[2]} ${parts[1]}`);
-      const indexes = parts.slice(3).join('').split(',').map(n => parseInt(n));
+      const channelIndexes = parts.slice(3).join('').split(',').map(n => parseInt(n));
 
       const recipientId = message.channel.recipient?.id;
       if (!recipientId) return;
@@ -172,12 +172,13 @@ client.on('messageCreate', async (message) => {
 
       const partnerMention = `<@${recipientId}>`;
 
-      for (const channelId of indexes.map(i => PARTNER_CHANNELS[i - 1])) {
-        const ch = await client.channels.fetch(channelId).catch(() => null);
-        if (!ch) continue;
+      for (const channelId of channelIndexes.map(i => PARTNER_CHANNELS[i - 1])) {
+        const partnerChannel = await client.channels.fetch(channelId).catch(() => null);
+        if (!partnerChannel) continue;
 
         for (const [, ad] of userAds) {
-          await safeSend(ch, `${ad.content}\n\n🤝 Partner: ${partnerMention}`);
+          // 🔥 JEDYNA ZMIANA (dodany mention)
+          await safeSend(partnerChannel, `${ad.content}\n\n🤝 Partner: ${partnerMention}`);
         }
       }
 

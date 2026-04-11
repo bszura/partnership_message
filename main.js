@@ -56,145 +56,32 @@ client.once('ready', async () => {
 
 // ===================== REKLAMY =====================
 
-const ad1 = `# 🌨️❄️ 𝒁𝒊𝒎𝒐𝒘𝒆 ⛄ 𝑹𝒆𝒌𝒍𝒂𝒎𝒚 ❄️🌨️
-> ✩ Poszukujesz idealnego serwera *reklamowego*, na którym widnieje wspaniała społeczność?
-> • Dłużej nie szukaj! Dołącz do 𝒏𝒂𝒔
-### ───────୨⋆｡‧˚❆☃️❆˚‧｡⋆ৎ───────
-## ❄️❔❄️ 𝑪𝑶 𝑶𝑭𝑬𝑹𝑼𝑱𝑬𝑴𝒀 ❄️❔❄️
-> 
-「 ✦ 𝑲𝒐𝒏𝒌𝒖𝒓𝒔𝒚 ✦ 」- Częste konkursy, i giveaway'e. Wielkie nagrody, małe wymagania!
-「 ✦ 𝑺𝒕𝒓𝒆𝒇𝒂 4𝒇𝒖𝒏 ✦ 」- Wiele kanałów do zabawy, z członkami, jak i botami!
-「 ✦ 𝑬𝒌𝒐𝒏𝒐𝒎𝒊𝒂 ✦ 」- Autorska ekonomia, z wieloma nagrodami! Serwerowe, Reklamy, na pewno znajdziesz coś dla *siebie*
-「 ✦ 𝑨𝒕𝑴𝒐𝑺𝒇𝑬𝒓𝑨 ✦ 」- Miła społeczność, która bardzo ciepło Cię przyjmie ❦
-「 ✦ 𝑺𝒕𝒓𝒆𝒇𝒂 𝑷𝒐𝒎𝒐𝒄𝒚 ✦ 」- Rozbudowany system zgłoszeń, a także szybka Administracja, gotowa Ci pomóc w każdej chwili
-「 ✦ 𝑺𝒛𝒚𝒃𝒌𝒂 𝒘𝒔𝒑𝒐𝒍𝒑𝒓𝒂𝒄𝒂 ✦ 」- realizatorzy, którzy chętnie zawrą z Tobą partnerstwo!
-「 ✦ 𝑨𝒖𝒕𝒐𝒓𝒔𝒌𝒊𝒆 𝑩𝒐𝒕𝒚 ✦ 」- Boty, które pozwalają na unikalne doznania!
-「 ✦ 𝒌𝒂𝒏𝒂𝒍𝒚 𝒓𝒆𝒌𝒍𝒂𝒎𝒐𝒘𝒆 ✦ 」- Mnóstwo kanałów reklamowych, które pozwolą wypromować Twój serwer!
-「 ✦ 𝑳𝒂𝒕𝒘𝒆 𝒘𝒚𝒑𝒓𝒐𝒎𝒐𝒘𝒂𝒏𝒊𝒆 𝒔𝒊𝒆 ✦ 」- Wiele sposobów na reklamowanie serwera, za darmo - jak i płatnie!
-### ───────୨⋆｡‧˚❆☃️❆˚‧｡⋆ৎ───────
-## ❄️❔❄️ 𝑲𝑶𝑮𝑶 𝑺𝒁𝑼𝑲𝑨𝑴𝒀 ❄️❔❄️
-> 
-✦***Administracji*** -  która pilnuje porządku
-✦***Realizatorów*** -  kasa na partnerstwa
-✦***Partnerstw*** - promujmy się nawzajem
-✦**Boosterów*** -  wesprzyj nasz serwer
-✦***Miła Społeczność*** - rozwijajmy Nasz serwer
-✦***Ciebie*** - Wspaniałą osobę!
-### ───────୨⋆｡‧˚❆☃️❆˚‧｡⋆ৎ───────
-𝑵𝒊𝒆 𝒘𝒊𝒆𝒓𝒛𝒚𝒔𝒛? 𝒔𝒑𝒓𝒂𝒘𝒅𝒛 𝒔𝒂𝒎! 𝑵𝒊𝒆 𝒑𝒐𝒛𝒂𝒍𝒖𝒋𝒆𝒔𝒛
--# *gif:*https://giphy.com/gifs/vZeuprCarBQPL2P8sq
--# Link: 🥶 https://discord.gg/43rMsV9HG7 🥶
-Strona naszego serwera:
-https://winterboard.pl/`;
-
-const ad2 = `#  🦔︲Taniej! - Nie tylko z nazwy!
-## **⭐ ︲ Wiesz dlaczego klienci wybierają NAS?**
-> \`💸\` **︲** Najniższe ceny na całym rynku - dlatego nazywamy się "Taniej!" 🙂
-> \`⚡\` **︲** Profesjonalna i błyskawiczna obsługa zamówień
-> \`📦\` **︲** N1tr0 za 17PLN - działające na DOWOLNYM koncie
-> \`🚚\` **︲** Szeroka oferta: waluty do gier, follow na tiktok, streamingówki
-> \`🎮\` **︲** Konta ze skinami/grami, boty, programy i WIELE WIĘCEJ
-> \`🎉\` **︲** Regularne konkursy o dobre pieniądze
-> \`✅\` **︲** Bezpieczne transakcje - ponad 2,800 potwierdzonych zamówień
-> \`📩\` **︲** Poszukujemy Realizatorów Partnerstw, płacimy do 1,20 PLN
-> \`💸\` **︲** Zarobek za __zapraszanie znajomych__
-\`👟\` ︲**Jeśli jesteś wystarczająco szybki, odbierzesz u nas __darmowe N1tro lub pieniądze__**
-\`💰\` ︲**Sprzedasz u nas swoje __stare konto__ do gry**
-\`👋\` **︲ Do zobaczenia na serwerze!** 
-- \`🔗\` [Dołącz teraz!](https://discord.gg/ogtaniej)`;
-
-const ad3 = `#  🛒 CHERRY SHØP  🛒
-## 💸 ⨯ Najlepsza Jakość | Najlepsze Ceny | Błyskawiczna Obsługa
-## **🤔 ⨯ Co znajdziesz na naszym serwerze?**
-> \`⭐\` **⨯** Mega niskie ceny i ekspresowa realizacja zamówień!
-> \`🔧\` **⨯** Dopracowany serwer z profesjonalnym podejściem!
-> \`📦\` **⨯** Szeroka oferta pr0duktów!
-> \`🎉\` **⨯** Konkursy ze świetnymi nagrodami!
-> \`✅\` **⨯** Duża ilość legit checków.
-> \`💸\` **⨯** Program partnerski - zarabiaj 0,70 PLN za każde partnerstwo!
-## **✨ ⨯ Część naszego asortymentu:**
-- \`🛒\` **⨯** **USŁUGI D1SC0RD** -  S3rver B00sty, d3koracje, k0nta D1sc0rd, użytkownicy na serwer oraz N1tr0 B00ST za jedynie __18 PLN!__
-- \`🎬\` **⨯** **PLATFORMY VOD** - Netflix, HBO Max, Disney, Canal+ i inne - oglądaj taniej, bez ograniczeń!
-- \`📚\` **⨯** **NARZĘDZIA EDUKACYJNE** – K0nta ChatGPT, Odrabiamy oraz inne usługi pomocne w nauce czy pisaniu prac!
-- \`💸\` **⨯** **D0ŁADOWANIA DO GIER** - Nie przepłacaj u twórców - kupuj u nas, zawsze w dobrej cenie!
-- \`📢\` **⨯** **S0CIAL B00STING** - Obserwacje, polubienia i wyświetlenia na wielu platformach, rozwiń swoje profile!
-- \`🌍\` **⨯** **PRYWATNOŚĆ W SIECI** - Zakup odpowiedniego VPN - chroń swoją obecność w sieci!
-- \`📲\` **⨯**  **WERYFIKACJA SMS** - Szybkie numery tymczasowe do rejestracji wszędzie, gdzie potrzebujesz!
-## \`🛒\` **⨯ DOŁĄCZ DO NAS I KUPUJ W ŚWIETNYCH CENACH!**  
-\`👋\` **⨯ Do zobaczenia na serwerze!** 
-\`🔗\` [Dołącz teraz!](https://discord.gg/cherryshop)`;
-
-const ad4 = `# 💱 WITAJ NA WYMIENIASZ 💱
-**Miejsce stworzone dla ludzi, którzy chcą wymieniać szybko, bezpiecznie i bez zbędnego gadania.**
-|| @everyone ||
-### Dlaczego Wymieniasz?
-**– Przejrzyste zasady i uczciwe prowizje
-– Szybkie realizacje bez przeciągania w czasie
-– Zweryfikowani realizatorzy i bezpieczny system ticketów
-– Regularne konkursy i eventy dla aktywnych
-– Stały rozwój serwera**
-## AKTUALNIE TRWA KONKURS NA 50 PLN
-https://discord.gg/wymieniasz`;
-
-
-
-const ad6 = `## \`🛒\` **CITSH0P** × CENTRUM ZAKUPÓW
-\`🎯\` **× Dlaczego my?**
-\`⏰\` **×** Najdłużej na rynku!
--# Jesteśmy na rynku od ponad roku!
-\`💸\` **×** Najtaniej w Polsce!
--# Nasz cennik jest najbardziej korzystny!
-\`✅\` **×** Najbardziej zaufany!
--# Posiadamy legitne, doświadczone grono sprzedawców!
-\`🫡\` **×** Najwyższa jakość!
--# Większość naszych produktów jest objęta gwarancją!
-> **Zapraszamy Cię do naszej społeczności!**
-> https://discord.gg/citshop`;
-
-const ad7 = `#  🛒 SZYBKI ZAKUP 🛒
-## 💸 ⨯ Najlepsza Jakość | Najlepsze Ceny | Błyskawiczna Obsługa
-## **🤔 ⨯ Co znajdziesz na naszym serwerze?**
-> \`⭐\` **⨯** Mega niskie ceny i ekspresowa realizacja zamówień!
-> \`🔧\` **⨯** Dopracowany serwer z profesjonalnym podejściem!
-> \`📦\` **⨯** Szeroka oferta pr0duktów!
-> \`🎉\` **⨯** Konkursy ze świetnymi nagrodami!
-> \`✅\` **⨯** Duża ilość legit checków.
-> \`💸\` **⨯** Program partnerski - zarabiaj 0,40 PLN za każde partnerstwo!
-## **✨ ⨯ Część naszego asortymentu:**
-- \`🛒\` **⨯** **USŁUGI D1SC0RD** -  S3rver B00sty, d3koracje, k0nta D1sc0rd, użytkownicy na serwer oraz N1tr0 B00ST za jedynie __25 PLN!__
-- \`🎬\` **⨯** **PLATFORMY VOD** - Netflix, HBO Max, Disney+ i inne - oglądaj taniej, bez ograniczeń!
-- \`📚\` **⨯** **NARZĘDZIA EDUKACYJNE** – K0nta ChatGPT, Odrabiamy oraz inne usługi pomocne w nauce czy pisaniu prac!
-- \`💸\` **⨯** **D0ŁADOWANIA DO GIER** - Nie przepłacaj u twórców - kupuj u nas, zawsze w dobrej cenie!
-- \`📢\` **⨯** **S0CIAL B00STING** - Obserwacje, polubienia i wyświetlenia na wielu platformach, rozwiń swoje profile!
-- \`🌍\` **⨯** **PRYWATNOŚĆ W SIECI** - Zakup odpowiedniego VPN - chroń swoją obecność w sieci!
-- \`📲\` **⨯**  **WERYFIKACJA SMS** - Szybkie numery tymczasowe do rejestracji wszędzie, gdzie potrzebujesz!
-- \`🏅\` **⨯**  **H4ZARD ONLINE** - Dla fanów obstawiania i gier losowych!
-## \`🛒\` **⨯ DOŁĄCZ DO NAS I KUPUJ W ŚWIETNYCH CENACH!**  
-\`👋\` **⨯ Do zobaczenia na serwerze!** 
-\`🔗\` [Dołącz teraz!](https://discord.gg/szybkizakup)`;
-
-
+const ad1 = `...`;
+const ad2 = `...`;
+const ad3 = `...`;
+const ad4 = `...`;
+const ad6 = `...`;
+const ad7 = `...`;
 
 const ALL_ADS = [ad1, ad2, ad3, ad4, ad6, ad7];
 
 // ===================== KANAŁY =====================
 
 const PARTNER_CHANNELS = [
-  '1487559123166822460', // 1
-  '1485664071234621440', // 2
-  '1476241698207043636', // 3
-  '1455561797821141094', // 4
-  '1449144356975149358', // 5
-  '1429451429273141251', // 6
-  '1296167863551529033', // 7
+  '1487559123166822460',
+  '1485664071234621440',
+  '1476241698207043636',
+  '1455561797821141094',
+  '1449144356975149358',
+  '1429451429273141251',
+  '1296167863551529033',
 ];
 
-const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000; // 5 dni
+const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000;
 const pendingRenewals = new Map();
 
-// ===================== OCHRONA PRZED BANEM =====================
+// ===================== OCHRONA =====================
 
-// Losowe opóźnienie między MIN a MAX ms — naśladuje ludzkie zachowanie
 const DELAY_MIN = 4000;
 const DELAY_MAX = 9000;
 
@@ -203,37 +90,27 @@ function randomDelay() {
   return new Promise(r => setTimeout(r, ms));
 }
 
-// Globalny licznik wiadomości — pauza co N wiadomości
 let messagesSentCount = 0;
-const PAUSE_EVERY = 5;        // pauza co 5 wiadomości
-const PAUSE_DURATION = 20000; // 20 sekund pauzy
+const PAUSE_EVERY = 5;
+const PAUSE_DURATION = 20000;
 
 async function safeSend(channel, content) {
   messagesSentCount++;
+
   if (messagesSentCount % PAUSE_EVERY === 0) {
-    console.log(`[ochrona] Pauza ${PAUSE_DURATION / 1000}s po ${messagesSentCount} wiadomościach...`);
     await new Promise(r => setTimeout(r, PAUSE_DURATION));
   }
+
   await randomDelay();
   await channel.send(content);
 }
 
-// ===================== FUNKCJE =====================
-
-function parseDateTime(timeStr, dateStr) {
-  try {
-    const [hours, minutes] = timeStr.split(':').map(Number);
-    const [day, month, year] = dateStr.split('.').map(Number);
-    const date = new Date(year, month - 1, day, hours, minutes, 0, 0);
-    return date.getTime();
-  } catch (e) {
-    return null;
-  }
-}
+// ===================== REMINDERY =====================
 
 function startReminderChecker() {
   setInterval(async () => {
     const now = Date.now();
+
     const result = await db.execute({
       sql: 'SELECT user_id FROM partnership_reminders WHERE remind_at <= ?',
       args: [now],
@@ -241,19 +118,22 @@ function startReminderChecker() {
 
     for (const row of result.rows) {
       const userId = row.user_id;
+
       try {
         await deleteReminder(userId);
+
         const user = await client.users.fetch(userId);
         const dm = await user.createDM();
+
         await safeSend(dm, "⏰ Minęło 5 dni! Czy chcesz nawiązać nowe partnerstwo?");
       } catch (e) {
         console.error(`Błąd przypomnienia dla ${userId}:`, e.message);
       }
     }
-  }, 10 * 1000);
+  }, 10000);
 }
 
-// ===================== EVENTY =====================
+// ===================== EVENT =====================
 
 client.on('messageCreate', async (message) => {
   if (message.guild) return;
@@ -262,122 +142,77 @@ client.on('messageCreate', async (message) => {
   const isMe = message.author.id === client.user.id;
   const content = message.content.trim();
 
+  // ===================== TWOJE KOMENDY =====================
+
   if (isMe) {
 
-    // reklama — wyślij wszystkie reklamy rozmówcy
     if (content === 'reklama') {
       for (const ad of ALL_ADS) {
         await safeSend(message.channel, ad);
       }
-      console.log(`[reklama] Wysłano ${ALL_ADS.length} reklam`);
       return;
     }
 
-    // wstaw HH:MM DD.MM.YYYY 1, 2, 3 — wyślij wszystkie reklamy użytkownika na wybrane kanały
     if (content.startsWith('wstaw')) {
       const parts = content.split(' ');
-      if (parts.length < 4) {
-        await message.channel.send("❕ Użycie: `wstaw 12:41 5.04.2026 1, 2, 3` (numery kanałów z listy PARTNER_CHANNELS)");
-        return;
-      }
 
-      const fromTimestamp = parseDateTime(parts[1], parts[2]);
-      if (!fromTimestamp || isNaN(fromTimestamp)) {
-        await message.channel.send("❕ Nieprawidłowy format. Użyj: `wstaw 12:41 5.04.2026 1, 2, 3`");
-        return;
-      }
-
-      const channelIndexesRaw = parts.slice(3).join('');
-      const channelIndexes = channelIndexesRaw
-        .split(',')
-        .map(n => parseInt(n.trim()))
-        .filter(n => !isNaN(n) && n >= 1 && n <= PARTNER_CHANNELS.length);
-
-      if (channelIndexes.length === 0) {
-        await message.channel.send(`❕ Podaj prawidłowe numery kanałów (1-${PARTNER_CHANNELS.length}).`);
-        return;
-      }
-
-      const selectedChannelIds = channelIndexes.map(i => PARTNER_CHANNELS[i - 1]);
+      const fromTimestamp = Date.parse(`${parts[2]} ${parts[1]}`);
+      const indexes = parts.slice(3).join('').split(',').map(n => parseInt(n));
 
       const recipientId = message.channel.recipient?.id;
-      if (!recipientId) {
-        await message.channel.send("❕ Nie mogę określić rozmówcy.");
-        return;
-      }
+      if (!recipientId) return;
 
       const fetchedMessages = await message.channel.messages.fetch({ limit: 100 });
-      const userAds = fetchedMessages
-        .filter(m =>
-          m.author.id === recipientId &&
-          m.content.includes('https://discord.gg/') &&
-          m.createdTimestamp >= fromTimestamp
-        )
-        .sort((a, b) => a.createdTimestamp - b.createdTimestamp);
 
-      if (userAds.size === 0) {
-        await message.channel.send(`❕ Nie znalazłem żadnych reklam od ${parts[2]} ${parts[1]}.`);
-        return;
-      }
+      const userAds = fetchedMessages.filter(m =>
+        m.author.id === recipientId &&
+        m.content.includes('https://discord.gg/') &&
+        m.createdTimestamp >= fromTimestamp
+      );
 
-      for (const channelId of selectedChannelIds) {
-        const partnerChannel = await client.channels.fetch(channelId).catch(() => null);
-        if (!partnerChannel) {
-          console.error(`Nie znaleziono kanału ${channelId}`);
-          continue;
-        }
+      const partnerMention = `<@${recipientId}>`;
+
+      for (const channelId of indexes.map(i => PARTNER_CHANNELS[i - 1])) {
+        const ch = await client.channels.fetch(channelId).catch(() => null);
+        if (!ch) continue;
+
         for (const [, ad] of userAds) {
-          await safeSend(partnerChannel, ad.content);
+          await safeSend(ch, `${ad.content}\n\n🤝 Partner: ${partnerMention}`);
         }
       }
 
-      await message.channel.send(`✅ Wstawiono ${userAds.size} reklamę/reklamy użytkownika na kanały nr [${channelIndexes.join(', ')}].`);
-      console.log(`[wstaw] Wstawiono ${userAds.size} reklam na kanały ${channelIndexes.join(', ')}`);
       return;
     }
 
-    // odnowa — zapytaj rozmówcę czy chce przypomnienie za 5 dni
     if (content === 'odnowa') {
       const recipientId = message.channel.recipient?.id;
-      if (!recipientId) {
-        await message.channel.send("❕ Nie mogę określić rozmówcy.");
-        return;
-      }
+      if (!recipientId) return;
 
       pendingRenewals.set(recipientId, true);
-      await message.channel.send("🔔 Czy chcesz za 5 dni znowu nawiązać partnerstwo? Wpisz **tak** lub **nie**.");
-      console.log(`[odnowa] Zapytano ${recipientId}`);
+      await message.channel.send("Czy chcesz za 5 dni znowu nawiązać partnerstwo? Wpisz **tak** lub **nie**");
       return;
     }
 
     return;
   }
 
-  // Odpowiedź rozmówcy na odnowa
+  // ===================== ODPOWIEDZI =====================
+
   if (pendingRenewals.has(message.author.id)) {
     const answer = content.toLowerCase();
 
     if (answer.includes('tak')) {
       const remindAt = Date.now() + REMINDER_DELAY;
       await setReminder(message.author.id, remindAt);
-      await message.channel.send("✅ Super! Przypomnę Ci o partnerstwie za 5 dni.");
       pendingRenewals.delete(message.author.id);
-    } else if (answer.includes('nie')) {
-      await message.channel.send("👋 Rozumiem! Do zobaczenia!");
-      pendingRenewals.delete(message.author.id);
-    } else {
-      await message.channel.send("❓ Wpisz **tak** lub **nie**.");
     }
+
+    if (answer.includes('nie')) {
+      pendingRenewals.delete(message.author.id);
+    }
+
     return;
   }
 });
 
-client.on('error', (error) => console.error('Błąd Discorda:', error));
-process.on('unhandledRejection', (error) => console.error('Nieobsłużony błąd:', error));
-
-console.log('Próbuję się zalogować...');
-client.login(process.env.DISCORD_TOKEN).then(() => {
-  console.log('Login promise resolved');
-}).catch((e) => {
-  console.error('Błąd logowania:', e.message);
-});
+client.login(process.env.DISCORD_TOKEN);

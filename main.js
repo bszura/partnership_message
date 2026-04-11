@@ -207,18 +207,43 @@ const ALL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8];
 // ===================== KANAŁY =====================
 
 const PARTNER_CHANNELS = [
-  '1487559123166822460',
-  '1485664071234621440',
-  '1476241698207043636',
-  '1455561797821141094',
-  '1449144356975149358',
-  '1429451429273141251',
-  '1296167863551529033',
+  '1487559123166822460', // 1
+  '1485664071234621440', // 2
+  '1476241698207043636', // 3
+  '1455561797821141094', // 4
+  '1449144356975149358', // 5
+  '1429451429273141251', // 6
+  '1296167863551529033', // 7
 ];
 
 const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000; // 5 dni
-
 const pendingRenewals = new Map();
+
+// ===================== OCHRONA PRZED BANEM =====================
+
+// Losowe opóźnienie między MIN a MAX ms — naśladuje ludzkie zachowanie
+const DELAY_MIN = 4000;
+const DELAY_MAX = 9000;
+
+function randomDelay() {
+  const ms = Math.floor(Math.random() * (DELAY_MAX - DELAY_MIN + 1)) + DELAY_MIN;
+  return new Promise(r => setTimeout(r, ms));
+}
+
+// Globalny licznik wiadomości — pauza co N wiadomości
+let messagesSentCount = 0;
+const PAUSE_EVERY = 5;        // pauza co 5 wiadomości
+const PAUSE_DURATION = 20000; // 20 sekund pauzy
+
+async function safeSend(channel, content) {
+  messagesSentCount++;
+  if (messagesSentCount % PAUSE_EVERY === 0) {
+    console.log(`[ochrona] Pauza ${PAUSE_DURATION / 1000}s po ${messagesSentCount} wiadomościach...`);
+    await new Promise(r => setTimeout(r, PAUSE_DURATION));
+  }
+  await randomDelay();
+  await channel.send(content);
+}
 
 // ===================== FUNKCJE =====================
 
@@ -247,7 +272,7 @@ function startReminderChecker() {
         await deleteReminder(userId);
         const user = await client.users.fetch(userId);
         const dm = await user.createDM();
-        await dm.send("⏰ Minęło 5 dni! Czy chcesz nawiązać nowe partnerstwo?");
+        await safeSend(dm, "⏰ Minęło 5 dni! Czy chcesz nawiązać nowe partnerstwo?");
       } catch (e) {
         console.error(`Błąd przypomnienia dla ${userId}:`, e.message);
       }
@@ -269,18 +294,17 @@ client.on('messageCreate', async (message) => {
     // reklama — wyślij wszystkie reklamy rozmówcy
     if (content === 'reklama') {
       for (const ad of ALL_ADS) {
-        await message.channel.send(ad);
-        await new Promise(r => setTimeout(r, 5000));
+        await safeSend(message.channel, ad);
       }
       console.log(`[reklama] Wysłano ${ALL_ADS.length} reklam`);
       return;
     }
 
-    // wstaw HH:MM DD.MM.YYYY 1,2,3 — wstaw wybrane reklamy od podanego czasu
+    // wstaw HH:MM DD.MM.YYYY 1, 2, 3 — wyślij wszystkie reklamy użytkownika na wybrane kanały
     if (content.startsWith('wstaw')) {
       const parts = content.split(' ');
       if (parts.length < 4) {
-        await message.channel.send("❕ Użycie: `wstaw 12:41 5.04.2026 1, 2, 3`");
+        await message.channel.send("❕ Użycie: `wstaw 12:41 5.04.2026 1, 2, 3` (numery kanałów z listy PARTNER_CHANNELS)");
         return;
       }
 
@@ -290,19 +314,18 @@ client.on('messageCreate', async (message) => {
         return;
       }
 
-      // Parsuj numery reklam z reszty tekstu (np. "2, 5, 8")
-      const adIndexesRaw = parts.slice(3).join('');
-      const adIndexes = adIndexesRaw
+      const channelIndexesRaw = parts.slice(3).join('');
+      const channelIndexes = channelIndexesRaw
         .split(',')
         .map(n => parseInt(n.trim()))
-        .filter(n => !isNaN(n) && n >= 1 && n <= ALL_ADS.length);
+        .filter(n => !isNaN(n) && n >= 1 && n <= PARTNER_CHANNELS.length);
 
-      if (adIndexes.length === 0) {
-        await message.channel.send(`❕ Podaj prawidłowe numery reklam (1-${ALL_ADS.length}).`);
+      if (channelIndexes.length === 0) {
+        await message.channel.send(`❕ Podaj prawidłowe numery kanałów (1-${PARTNER_CHANNELS.length}).`);
         return;
       }
 
-      const selectedAds = adIndexes.map(i => ALL_ADS[i - 1]);
+      const selectedChannelIds = channelIndexes.map(i => PARTNER_CHANNELS[i - 1]);
 
       const recipientId = message.channel.recipient?.id;
       if (!recipientId) {
@@ -310,9 +333,8 @@ client.on('messageCreate', async (message) => {
         return;
       }
 
-      const messages = await message.channel.messages.fetch({ limit: 100 });
-
-      const ads = messages
+      const fetchedMessages = await message.channel.messages.fetch({ limit: 100 });
+      const userAds = fetchedMessages
         .filter(m =>
           m.author.id === recipientId &&
           m.content.includes('https://discord.gg/') &&
@@ -320,26 +342,24 @@ client.on('messageCreate', async (message) => {
         )
         .sort((a, b) => a.createdTimestamp - b.createdTimestamp);
 
-      if (ads.size === 0) {
+      if (userAds.size === 0) {
         await message.channel.send(`❕ Nie znalazłem żadnych reklam od ${parts[2]} ${parts[1]}.`);
         return;
       }
 
-      for (const channelId of PARTNER_CHANNELS) {
+      for (const channelId of selectedChannelIds) {
         const partnerChannel = await client.channels.fetch(channelId).catch(() => null);
         if (!partnerChannel) {
           console.error(`Nie znaleziono kanału ${channelId}`);
           continue;
         }
-        if (partnerChannel.guild?.id === '1177704592079867916') continue;
-        for (const ad of selectedAds) {
-          await partnerChannel.send(ad);
-          await new Promise(r => setTimeout(r, 2000));
+        for (const [, ad] of userAds) {
+          await safeSend(partnerChannel, ad.content);
         }
       }
 
-      await message.channel.send(`✅ Wstawiono reklamy nr [${adIndexes.join(', ')}] na ${PARTNER_CHANNELS.length} kanałów.`);
-      console.log(`[wstaw] Wstawiono reklamy ${adIndexes.join(', ')}`);
+      await message.channel.send(`✅ Wstawiono ${userAds.size} reklamę/reklamy użytkownika na kanały nr [${channelIndexes.join(', ')}].`);
+      console.log(`[wstaw] Wstawiono ${userAds.size} reklam na kanały ${channelIndexes.join(', ')}`);
       return;
     }
 

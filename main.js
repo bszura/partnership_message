@@ -300,10 +300,9 @@ client.on('messageCreate', async (message) => {
   const content = message.content.trim();
 
   if (isMe) {
-    // usuń komendę po 1 sekundzie
-    setTimeout(() => message.delete().catch(() => {}), 1000);
 
     if (content === 'reklama') {
+      setTimeout(() => message.delete().catch(() => {}), 1000);
       for (const ad of ALL_ADS) {
         await safeSend(message.channel, ad);
       }
@@ -312,10 +311,11 @@ client.on('messageCreate', async (message) => {
     }
 
     if (content.startsWith('wstaw')) {
+      setTimeout(() => message.delete().catch(() => {}), 1000);
       const commandTimestamp = message.createdTimestamp;
       const parts = content.split(' ');
       if (parts.length < 4) {
-        await message.channel.send("❕ Użycie: `wstaw 12:41 5.04.2026 1, 2, 3` (numery kanałów z listy PARTNER_CHANNELS)");
+        await message.channel.send("❕ Użycie: `wstaw 12:41 5.04.2026 1, 2, 3`");
         return;
       }
 
@@ -385,6 +385,7 @@ client.on('messageCreate', async (message) => {
     }
 
     if (content === 'odnowa') {
+      setTimeout(() => message.delete().catch(() => {}), 1000);
       const recipientId = message.channel.recipient?.id;
       if (!recipientId) {
         await message.channel.send("❕ Nie mogę określić rozmówcy.");

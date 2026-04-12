@@ -202,7 +202,7 @@ const ad8 = `## Serwer gdzie tworzymy boty!
 > Dołącz na naszego discorda już teraz!
 > https://discord.gg/dcboty`;
 
-const ALL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8];
+const ALL_ADS = [ad1];
 
 // ===================== KANAŁY =====================
 

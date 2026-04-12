@@ -205,8 +205,8 @@ const pendingRenewals = new Map();
 
 // ===================== OCHRONA PRZED BANEM =====================
 
-const DELAY_MIN = 4000;
-const DELAY_MAX = 9000;
+const DELAY_MIN = 10000;
+const DELAY_MAX = 15000;
 
 function randomDelay() {
   const ms = Math.floor(Math.random() * (DELAY_MAX - DELAY_MIN + 1)) + DELAY_MIN;

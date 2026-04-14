@@ -220,7 +220,7 @@ const PARTNER_CHANNELS = [
 const WATCH_CHANNEL_ID = '1346609247869337701';
 const messagedUsers = new Set();
 
-const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000;
+const REMINDER_DELAY = 3 * 24 * 60 * 60 * 1000;
 const pendingRenewals = new Map();
 
 // ===================== OCHRONA PRZED BANEM =====================
@@ -409,7 +409,7 @@ client.on('messageCreate', async (message) => {
         return;
       }
       pendingRenewals.set(recipientId, true);
-      await message.channel.send("🔔 Czy chcesz za 5 dni znowu nawiązać partnerstwo? Wpisz **tak** lub **nie**.");
+      await message.channel.send("🔔 Czy chcesz za 3 dni znowu nawiązać partnerstwo? Wpisz **tak** lub **nie**.");
       console.log(`[odnowa] Zapytano ${recipientId}`);
       return;
     }

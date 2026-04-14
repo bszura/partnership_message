@@ -422,7 +422,7 @@ client.on('messageCreate', async (message) => {
     if (answer.includes('tak')) {
       const remindAt = Date.now() + REMINDER_DELAY;
       await setReminder(message.author.id, remindAt);
-      await message.channel.send("✅ Super! Przypomnę Ci o partnerstwie za 5 dni.");
+      await message.channel.send("✅ Super! Przypomnę Ci o partnerstwie za 3 dni.");
       pendingRenewals.delete(message.author.id);
     } else if (answer.includes('nie')) {
       await message.channel.send("👋 Rozumiem! Do zobaczenia!");

@@ -52,6 +52,7 @@ client.once('ready', async () => {
   console.log(`Bot ${client.user.tag} jest gotowy.`);
   await initDB();
   startReminderChecker();
+  startAutoMessage();
 });
 
 // ===================== REKLAMY =====================
@@ -270,6 +271,22 @@ function startReminderChecker() {
       }
     }
   }, 10 * 1000);
+}
+
+function startAutoMessage() {
+  setInterval(async () => {
+    try {
+      const channel = await client.channels.fetch(WATCH_CHANNEL_ID).catch(() => null);
+      if (!channel) {
+        console.error('[auto] Nie znaleziono kanału');
+        return;
+      }
+      await channel.send('# Partnerstwa PV');
+      console.log('[auto] Wysłano wiadomość na kanał');
+    } catch (e) {
+      console.error('[auto] Błąd:', e.message);
+    }
+  }, 61 * 60 * 1000);
 }
 
 // ===================== EVENTY =====================

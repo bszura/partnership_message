@@ -53,6 +53,7 @@ client.once('ready', async () => {
   await initDB();
   startReminderChecker();
   startAutoMessage();
+  startAutoAds();
 });
 
 // ===================== REKLAMY =====================
@@ -205,6 +206,25 @@ const ad8 = `## Serwer gdzie tworzymy boty!
 
 const ALL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8];
 
+const MY_AD = `# 🛒 SKY SHØP
+Wbij na serwer, gdzie stawiamy przede wszystkim na uczciwe ceny, szybki kontakt i dobre podejście do klienta. Wszystko robimy tak, żeby zakupy były proste i bez stresu 😎
+💡\`Co zyskujesz dołączając na początku?\`
+* 🆕 Więcej uwagi i lepsze traktowanie (bez tłumów)
+* 💸 Dodatkowe zniżki dla pierwszych klientów
+* 🏆 Szansa na bonusy i przywileje dla aktywnych
+🎰 \`Strefa kasyno\`
+To coś, co naprawdę wyróżnia nasz serwer 👀
+Nie tylko robisz zakupy, ale też możesz się pobawić i coś przy okazji zgarnąć:
+* 🎲 różne gry hazardowe (i kolejne będą dochodzić)
+* 💰 zdobywanie monet za wygrane
+* 🔄 możliwość wymiany monet na środki do sklepu
+* 📈 rozwijany system – nowe gry, ulepszenia i więcej opcji z czasem
+🤖 \`Autorski bot\`
+Mamy własnego bota stworzonego pod kasyno, którego cały czas rozwijamy – wszystko robione pod ten serwer, a nie kopiowane 👀
+🔥 \`Wbij i sprawdź sam\`
+Jeśli szukasz dobrych cen, szybkiej obsługi i czegoś więcej niż zwykły sklep – to miejsce jest właśnie dla Ciebie.
+# 👉 [Wbij teraz!](https://discord.gg/snUV9wnJvR) 👈`;
+
 // ===================== KANAŁY =====================
 
 const PARTNER_CHANNELS = [
@@ -220,7 +240,7 @@ const PARTNER_CHANNELS = [
 const WATCH_CHANNEL_ID = '1346609247869337701';
 const messagedUsers = new Set();
 
-const REMINDER_DELAY = 3 * 24 * 60 * 60 * 1000;
+const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000;
 const pendingRenewals = new Map();
 
 // ===================== OCHRONA PRZED BANEM =====================
@@ -277,16 +297,34 @@ function startAutoMessage() {
   setInterval(async () => {
     try {
       const channel = await client.channels.fetch(WATCH_CHANNEL_ID).catch(() => null);
-      if (!channel) {
-        console.error('[auto] Nie znaleziono kanału');
-        return;
-      }
+      if (!channel) { console.error('[auto] Nie znaleziono kanału'); return; }
       await channel.send('# Partnerstwa PV');
-      console.log('[auto] Wysłano wiadomość na kanał');
+      console.log('[auto] Wysłano wiadomość na kanał partnerski');
     } catch (e) {
       console.error('[auto] Błąd:', e.message);
     }
   }, 61 * 60 * 1000);
+}
+
+function startAutoAds() {
+  const autoAdChannels = [
+    { id: '1346609263681732710', interval: 31 * 60 * 1000 },
+    { id: '1346609266987110451', interval: 121 * 60 * 1000 },
+    { id: '1346609268375158834', interval: 11 * 60 * 1000 },
+  ];
+
+  for (const { id, interval } of autoAdChannels) {
+    setInterval(async () => {
+      try {
+        const channel = await client.channels.fetch(id).catch(() => null);
+        if (!channel) { console.error(`[autoAd] Nie znaleziono kanału ${id}`); return; }
+        await channel.send(MY_AD);
+        console.log(`[autoAd] Wysłano reklamę na kanał ${id}`);
+      } catch (e) {
+        console.error(`[autoAd] Błąd dla kanału ${id}:`, e.message);
+      }
+    }, interval);
+  }
 }
 
 // ===================== EVENTY =====================
@@ -409,7 +447,7 @@ client.on('messageCreate', async (message) => {
         return;
       }
       pendingRenewals.set(recipientId, true);
-      await message.channel.send("🔔 Czy chcesz za 3 dni znowu nawiązać partnerstwo? Wpisz **tak** lub **nie**.");
+      await message.channel.send("🔔 Czy chcesz za 5 dni znowu nawiązać partnerstwo? Wpisz **tak** lub **nie**.");
       console.log(`[odnowa] Zapytano ${recipientId}`);
       return;
     }
@@ -422,7 +460,7 @@ client.on('messageCreate', async (message) => {
     if (answer.includes('tak')) {
       const remindAt = Date.now() + REMINDER_DELAY;
       await setReminder(message.author.id, remindAt);
-      await message.channel.send("✅ Super! Przypomnę Ci o partnerstwie za 3 dni.");
+      await message.channel.send("✅ Super! Przypomnę Ci o partnerstwie za 5 dni.");
       pendingRenewals.delete(message.author.id);
     } else if (answer.includes('nie')) {
       await message.channel.send("👋 Rozumiem! Do zobaczenia!");

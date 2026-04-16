@@ -185,7 +185,7 @@ const ad7 = `#  🛒 SZYBKI ZAKUP 🛒
 - \`🛒\` **⨯** **USŁUGI D1SC0RD** -  S3rver B00sty, d3koracje, k0nta D1sc0rd, użytkownicy na serwer oraz N1tr0 B00ST za jedynie __25 PLN!__
 - \`🎬\` **⨯** **PLATFORMY VOD** - Netflix, HBO Max, Disney+ i inne - oglądaj taniej, bez ograniczeń!
 - \`📚\` **⨯** **NARZĘDZIA EDUKACYJNE** – K0nta ChatGPT, Odrabiamy oraz inne usługi pomocne w nauce czy pisaniu prac!
-- \`💸\` **⨯** **D0ŁADOWANIA DO GIER** - Nie przepłacaj u twórców - kupuj u nas, zawsze w dobrej cenie!
+- \`💸\` **⨯** **D0ŁADOWANIA DO GIER** - Nie przepłacaj u twórców - kupuj u nas, zawsze w dobiej cenie!
 - \`📢\` **⨯** **S0CIAL B00STING** - Obserwacje, polubienia i wyświetlenia na wielu platformach, rozwiń swoje profile!
 - \`🌍\` **⨯** **PRYWATNOŚĆ W SIECI** - Zakup odpowiedniego VPN - chroń swoją obecność w sieci!
 - \`📲\` **⨯**  **WERYFIKACJA SMS** - Szybkie numery tymczasowe do rejestracji wszędzie, gdzie potrzebujesz!
@@ -238,9 +238,13 @@ const PARTNER_CHANNELS = [
 ];
 
 const WATCH_CHANNEL_ID = '1346609247869337701';
+const PARTNER_LOG_CHANNEL_ID = '1442908672899547187';
+
 const messagedUsers = new Set();
+const partnerReminderUsers = new Set();
 
 const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000;
+const PARTNER_DM_DELAY = 5 * 24 * 60 * 60 * 1000 + 60 * 1000; // 5 dni + 1 minuta
 const pendingRenewals = new Map();
 
 // ===================== OCHRONA PRZED BANEM =====================
@@ -330,6 +334,7 @@ function startAutoAds() {
 // ===================== EVENTY =====================
 
 client.on('messageCreate', async (message) => {
+  // ===== OBSERWOWANIE KANAŁU PARTNERSKIEGO (watch) =====
   if (message.channel.id === WATCH_CHANNEL_ID && !message.author.bot && message.createdTimestamp >= botStartTime) {
     const authorId = message.author.id;
     if (messagedUsers.has(authorId)) return;
@@ -345,6 +350,32 @@ client.on('messageCreate', async (message) => {
         console.error(`[watch] Błąd wysyłania DM do ${authorId}:`, e.message);
       }
     }, 5 * 60 * 1000);
+    return;
+  }
+
+  // ===== OBSERWOWANIE KANAŁU LOGÓW PARTNERSKICH =====
+  if (message.channel.id === PARTNER_LOG_CHANNEL_ID && message.createdTimestamp >= botStartTime) {
+    // Wyciągnij wszystkich oznaczonych użytkowników z wiadomości
+    const mentionedUsers = message.mentions.users;
+    if (mentionedUsers.size === 0) return;
+
+    for (const [userId, user] of mentionedUsers) {
+      if (partnerReminderUsers.has(userId)) continue;
+      partnerReminderUsers.add(userId);
+
+      console.log(`[partnerLog] Oznaczono ${userId}, wyślę DM za 5 dni i 1 minutę`);
+
+      setTimeout(async () => {
+        try {
+          const dm = await user.createDM();
+          await dm.send("partnerstwo?");
+          console.log(`[partnerLog] Wysłano DM do ${userId}`);
+        } catch (e) {
+          console.error(`[partnerLog] Błąd wysyłania DM do ${userId}:`, e.message);
+        }
+        partnerReminderUsers.delete(userId); // usuń żeby można było znowu dostać przypomnienie
+      }, PARTNER_DM_DELAY);
+    }
     return;
   }
 

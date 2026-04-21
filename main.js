@@ -295,16 +295,36 @@ const ad13 = `## Serwer gdzie tworzymy boty!
 
 const ALL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8, ad9, ad10, ad11, ad12, ad13];
 
+// ZMIANA: nowa tablica reklam normalnych (tylko wybrane)
+const NORMAL_ADS = [ad2, ad3, ad4, ad5, ad9, ad10, ad13];
+
 // ===================== KANAŁY =====================
 
-const PARTNER_CHANNELS = [
-  '1487559123166822460', // 1
-  '1485664071234621440', // 2
-  '1476241698207043636', // 3
+// ZMIANA: stare PARTNER_CHANNELS usunięte, nowe listy kanałów
+const NORMAL_CHANNELS = [
+  '1400373678268612709', // 1
+  '1476649380143431793', // 2
+  '1406225658576900228', // 3
   '1455561797821141094', // 4
-  '1449144356975149358', // 5
-  '1429451429273141251', // 6
-  '1296167863551529033', // 7
+  '1296167863551529033', // 5
+  '1476241698207043636', // 6
+  '1489760556486234252', // 7
+];
+
+const SHOP_CHANNELS = [
+  '1400373678268612709', // 1
+  '1476649380143431793', // 2
+  '1406225658576900228', // 3
+  '1455561797821141094', // 4
+  '1296167863551529033', // 5
+  '1476241698207043636', // 6
+  '1489760556486234252', // 7
+  '1427708850676568234', // 8
+  '1465726979188719870', // 9
+  '1429451429273141251', // 10
+  '1485664071234621440', // 11
+  '1449144356975149358', // 12
+  '1487559123166822460', // 13
 ];
 
 const WATCH_CHANNEL_ID = '1346609247869337701';
@@ -392,7 +412,7 @@ function startAutoAds() {
       try {
         const channel = await client.channels.fetch(id).catch(() => null);
         if (!channel) { console.error(`[autoAd] Nie znaleziono kanału ${id}`); return; }
-        await channel.send(ad6); // SKY SHØP zastąpiony przez SUNNY SHOP jako "moja reklama"
+        await channel.send(ad6); // SUNNY SHOP - własna reklama
         console.log(`[autoAd] Wysłano reklamę na kanał ${id}`);
       } catch (e) {
         console.error(`[autoAd] Błąd dla kanału ${id}:`, e.message);
@@ -454,42 +474,83 @@ client.on('messageCreate', async (message) => {
 
   if (isMe) {
 
+    // ZMIANA: reklama wysyła tylko NORMAL_ADS
     if (content === 'reklama') {
+      setTimeout(() => message.delete().catch(() => {}), 1000);
+      for (const ad of NORMAL_ADS) {
+        await safeSend(message.channel, ad);
+      }
+      console.log(`[reklama] Wysłano ${NORMAL_ADS.length} reklam`);
+      return;
+    }
+
+    // ZMIANA: nowa komenda reklama shop
+    if (content === 'reklama shop') {
       setTimeout(() => message.delete().catch(() => {}), 1000);
       for (const ad of ALL_ADS) {
         await safeSend(message.channel, ad);
       }
-      console.log(`[reklama] Wysłano ${ALL_ADS.length} reklam`);
+      console.log(`[reklama shop] Wysłano ${ALL_ADS.length} reklam`);
       return;
     }
 
+    // ZMIANA: całkowicie przepisana komenda wstaw
     if (content.startsWith('wstaw')) {
       setTimeout(() => message.delete().catch(() => {}), 1000);
       const commandTimestamp = message.createdTimestamp;
       const parts = content.split(' ');
-      if (parts.length < 4) {
-        await message.channel.send("❕ Użycie: `wstaw 12:41 5.04.2026 1, 2, 3`");
-        return;
+
+      let mode = 'normal'; // 'normal' | 'shop' | 'custom'
+      let timeStr, dateStr, numbersRaw;
+
+      // Rozpoznanie trybu
+      if (parts.length >= 2 && parts[1] === 'shop') {
+        // wstaw shop <godzina> <data>
+        if (parts.length < 4) {
+          await message.channel.send("❕ Użycie: `wstaw shop <godzina> <data>`");
+          return;
+        }
+        mode = 'shop';
+        timeStr = parts[2];
+        dateStr = parts[3];
+      } else {
+        // wstaw <godzina> <data> [numery]
+        if (parts.length < 3) {
+          await message.channel.send("❕ Użycie: `wstaw <godzina> <data>` lub `wstaw <godzina> <data> <numery>`");
+          return;
+        }
+        timeStr = parts[1];
+        dateStr = parts[2];
+        numbersRaw = parts.slice(3).join('');
+        if (numbersRaw.trim().length > 0) {
+          mode = 'custom';
+        }
       }
 
-      const fromTimestamp = parseDateTime(parts[1], parts[2]);
+      const fromTimestamp = parseDateTime(timeStr, dateStr);
       if (!fromTimestamp || isNaN(fromTimestamp)) {
-        await message.channel.send("❕ Nieprawidłowy format. Użyj: `wstaw 12:41 5.04.2026 1, 2, 3`");
+        await message.channel.send("❕ Nieprawidłowy format daty/godziny.");
         return;
       }
 
-      const channelIndexesRaw = parts.slice(3).join('');
-      const channelIndexes = channelIndexesRaw
-        .split(',')
-        .map(n => parseInt(n.trim()))
-        .filter(n => !isNaN(n) && n >= 1 && n <= PARTNER_CHANNELS.length);
+      let selectedChannelIds = [];
 
-      if (channelIndexes.length === 0) {
-        await message.channel.send(`❕ Podaj prawidłowe numery kanałów (1-${PARTNER_CHANNELS.length}).`);
-        return;
+      if (mode === 'normal') {
+        selectedChannelIds = [...NORMAL_CHANNELS];
+      } else if (mode === 'shop') {
+        selectedChannelIds = [...SHOP_CHANNELS];
+      } else if (mode === 'custom') {
+        const channelIndexes = numbersRaw
+          .split(',')
+          .map(n => parseInt(n.trim()))
+          .filter(n => !isNaN(n) && n >= 1 && n <= SHOP_CHANNELS.length);
+
+        if (channelIndexes.length === 0) {
+          await message.channel.send(`❕ Podaj prawidłowe numery kanałów (1-${SHOP_CHANNELS.length}).`);
+          return;
+        }
+        selectedChannelIds = channelIndexes.map(i => SHOP_CHANNELS[i - 1]);
       }
-
-      const selectedChannelIds = channelIndexes.map(i => PARTNER_CHANNELS[i - 1]);
 
       const recipientId = message.channel.recipient?.id;
       if (!recipientId) {
@@ -508,7 +569,7 @@ client.on('messageCreate', async (message) => {
         .sort((a, b) => a.createdTimestamp - b.createdTimestamp);
 
       if (userAds.size === 0) {
-        await message.channel.send(`❕ Nie znalazłem żadnych reklam od ${parts[2]} ${parts[1]}.`);
+        await message.channel.send(`❕ Nie znalazłem żadnych reklam od ${dateStr} ${timeStr}.`);
         return;
       }
 
@@ -532,8 +593,14 @@ client.on('messageCreate', async (message) => {
         }
       }
 
-      await message.channel.send(`✅ Wstawiono ${adsArray.length} reklamę/reklamy użytkownika na kanały nr [${channelIndexes.join(', ')}].`);
-      console.log(`[wstaw] Gotowe. Wstawiono ${adsArray.length} reklam na kanały ${channelIndexes.join(', ')}`);
+      // Komunikat końcowy
+      let modeLabel = '';
+      if (mode === 'normal') modeLabel = ' (tryb normalny)';
+      else if (mode === 'shop') modeLabel = ' (tryb shop)';
+      else if (mode === 'custom') modeLabel = ' (wybrane kanały)';
+
+      await message.channel.send(`✅ Wstawiono ${adsArray.length} reklamę/reklamy użytkownika na kanały.${modeLabel}`);
+      console.log(`[wstaw] Gotowe. Wstawiono ${adsArray.length} reklam w trybie ${mode}`);
       return;
     }
 

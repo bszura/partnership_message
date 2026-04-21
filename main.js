@@ -58,38 +58,127 @@ client.once('ready', async () => {
 
 // ===================== REKLAMY =====================
 
-const ad1 = `# 🌨️❄️ 𝒁𝒊𝒎𝒐𝒘𝒆 ⛄ 𝑹𝒆𝒌𝒍𝒂𝒎𝒚 ❄️🌨️
-> ✩ Poszukujesz idealnego serwera *reklamowego*, na którym widnieje wspaniała społeczność?
-> • Dłużej nie szukaj! Dołącz do 𝒏𝒂𝒔
-### ───────୨⋆｡‧˚❆☃️❆˚‧｡⋆ৎ───────
-## ❄️❔❄️ 𝑪𝑶 𝑶𝑭𝑬𝑹𝑼𝑱𝑬𝑴𝒀 ❄️❔❄️
-> 
-「 ✦ 𝑲𝒐𝒏𝒌𝒖𝒓𝒔𝒚 ✦ 」- Częste konkursy, i giveaway'e. Wielkie nagrody, małe wymagania!
-「 ✦ 𝑺𝒕𝒓𝒆𝒇𝒂 4𝒇𝒖𝒏 ✦ 」- Wiele kanałów do zabawy, z członkami, jak i botami!
-「 ✦ 𝑬𝒌𝒐𝒏𝒐𝒎𝒊𝒂 ✦ 」- Autorska ekonomia, z wieloma nagrodami! Serwerowe, Reklamy, na pewno znajdziesz coś dla *siebie*
-「 ✦ 𝑨𝒕𝑴𝒐𝑺𝒇𝑬𝒓𝑨 ✦ 」- Miła społeczność, która bardzo ciepło Cię przyjmie ❦
-「 ✦ 𝑺𝒕𝒓𝒆𝒇𝒂 𝑷𝒐𝒎𝒐𝒄𝒚 ✦ 」- Rozbudowany system zgłoszeń, a także szybka Administracja, gotowa Ci pomóc w każdej chwili
-「 ✦ 𝑺𝒛𝒚𝒃𝒌𝒂 𝒘𝒔𝒑𝒐𝒍𝒑𝒓𝒂𝒄𝒂 ✦ 」- realizatorzy, którzy chętnie zawrą z Tobą partnerstwo!
-「 ✦ 𝑨𝒖𝒕𝒐𝒓𝒔𝒌𝒊𝒆 𝑩𝒐𝒕𝒚 ✦ 」- Boty, które pozwalają na unikalne doznania!
-「 ✦ 𝒌𝒂𝒏𝒂𝒍𝒚 𝒓𝒆𝒌𝒍𝒂𝒎𝒐𝒘𝒆 ✦ 」- Mnóstwo kanałów reklamowych, które pozwolą wypromować Twój serwer!
-「 ✦ 𝑳𝒂𝒕𝒘𝒆 𝒘𝒚𝒑𝒓𝒐𝒎𝒐𝒘𝒂𝒏𝒊𝒆 𝒔𝒊𝒆 ✦ 」- Wiele sposobów na reklamowanie serwera, za darmo - jak i płatnie!
-### ───────୨⋆｡‧˚❆☃️❆˚‧｡⋆ৎ───────
-## ❄️❔❄️ 𝑲𝑶𝑮𝑶 𝑺𝒁𝑼𝑲𝑨𝑴𝒀 ❄️❔❄️
-> 
-✦***Administracji*** -  która pilnuje porządku
-✦***Realizatorów*** -  kasa na partnerstwa
-✦***Partnerstw*** - promujmy się nawzajem
-✦**Boosterów*** -  wesprzyj nasz serwer
-✦***Miła Społeczność*** - rozwijajmy Nasz serwer
-✦***Ciebie*** - Wspaniałą osobę!
-### ───────୨⋆｡‧˚❆☃️❆˚‧｡⋆ৎ───────
-𝑵𝒊𝒆 𝒘𝒊𝒆𝒓𝒛𝒚𝒔𝒛? 𝒔𝒑𝒓𝒂𝒘𝒅𝒛 𝒔𝒂𝒎! 𝑵𝒊𝒆 𝒑𝒐𝒛𝒂𝒍𝒖𝒋𝒆𝒔𝒛
--# *gif:*https://giphy.com/gifs/vZeuprCarBQPL2P8sq
--# Link: 🥶 https://discord.gg/43rMsV9HG7 🥶
-Strona naszego serwera:
-https://winterboard.pl/`;
+const ad1 = `# \`❤️\` LUNARSHOP \`❤️\`
+## \`❤️\` Co oferujemy:
+> ** \`🛠️\` × Wysokiej jakości produkty!**
+> ** \`🛒\` × Niskie ceny i gwarancja**
+> ** \`📜\` × Regulamin stworzony z myślą o Waszym bezpieczeństwie i ochronie przed oszustwami!**
+## \`❓\` Dlaczego akurat my?
+> ** \`✅\` × Wielu zadowolonych klientów.**
+> ** \`🛒\` × Częste konkursy!**
+> ** \`💶\` × Masa promocji i restocku**
+##  \`🎯\` Nie wierzysz? Sprawdź sam!
+> ** \`🔗\` × [Kliknij Tutaj](https://discord.gg/F5zMCEwd5E) aby dołączyć do LUNARSHOP**
+> ||@everyone||`;
 
-const ad2 = `#  🦔︲Taniej! - Nie tylko z nazwy!
+const ad2 = `# 🐼 Panda Community - Razem tworzymy przestrzeń, w której każdy czuje się jak w domu! 🐼
+Szukasz miejsca gdzie **możesz pogadać z ludźmi o przeróżnych rzeczach**? 🚀
+**Dobrze trafiłeś/-aś**! ⚡
+## ✨ Nasze mocne strony:
+\` 🆕 \` **Nowości** - regularnie zmieniamy i wprowadzamy nowe rzeczy na serwer, aby utrzymać schludność i stałą rozrywkę!
+\` 👮 \` **Staff** -nie tylko załatwią z tobą poważny problem, ale też pogadają o pandach!
+\` 👥 \` **Społeczność** - chętnie porozmawiamy z tobą o grach, filmach, i przeróżnych rzeczach.
+\` ❗️ \` **Pingi** - sam/-a wybierasz o czym chcesz być informowany/-a, nie chcesz wiedzieć o nowych partnerstwach? Nie musisz!
+\` 🎉 \` **Atrakcje** - stale pracujemy nad nowymi formami zabawy, więc nie ma u nas miejsca na nudę!
+\` 🤩 \` **Kanały 4FUN** - liczenie, ostatnia litera, czy historia bez końca, mamy tu wszystko!
+\` 💲 \` **Nagrody** - dzięki licznym sponsorom, rozdania Nitro, kart podarunkowych, czy walut w grach to u nas codzienność!
+## 🎮 Rozrywka:
+\` 🕹️ \` **Wspólne granie** - bez spiny, poprostu luźne granie w ulubione gry!
+\` ❓ \` **Pytanie dnia** - codziennie odpowiadaj na nowe pytanie!
+\` ⭐ \` **Tematyczne eventy** - Halloween, Święta, Wielkanoc, świętuj z nami!
+\` 💰 \` **Ekonomia** - wyważona, ale z sytymi nagrodami...
+## 👤 Kogo Szukamy?
+\` 🫵 \` **Ciebie** - stań się wyjątkowym członkiem naszej społeczności!
+\` 🛡️ \` **Trial Moderator** - dołącz do ekipy i rozwijaj nie tylko serwer, ale też samego siebie!
+\` 🤝 \` **Realizatorów Partnerstw** - wykonuj partnerstwa, zdobywaj nagrody!
+\` 💜 \` **Boosterów** - zboostuj serwer i pomóż nam się rozwijać!
+\` 💵 \` **Sponsorów** - wesprzyj nas i ciesz się przywilejami!
+# 👉 Nie czekaj i [**kliknij tutaj**](https://discord.gg/2FJjN9yaM3)  👈`;
+
+const ad3 = `🚀 GrowthZone
+Masz serwer Discord i chcesz go rozwinąć?
+Szukasz miejsca, gdzie Twoja reklama nie zginie w spamie?
+🌟 GrowthZone to NOWY serwer promocyjny — startujemy całkowicie od zera!
+Tak — dopiero zaczynamy budować społeczność.
+I właśnie teraz jest najlepszy moment, żeby dołączyć 👇
+👑 Pierwsze osoby otrzymają specjalną rangę „Early Member"
+📢 Większą widoczność swoich serwerów
+🤝 Możliwość partnerstw
+🏆 Wyróżnienia dla aktywnych
+💰 Za zapraszanie ludzi na serwer możesz zarabiać — nagradzamy aktywnych!
+🎉  dużo różnych konkursów 
+U nas znajdziesz:
+📎 Kanały do promocji serwerów Discord
+🤝 Partnerstwa
+🔥 Przestrzeń do rozwijania swojego projektu
+Nie dołączasz do przepełnionego serwera.
+Dołączasz do projektu, który budujemy od podstaw — razem.
+🚀 Wejdź do GrowthZone i bądź częścią startu 
+https://discord.gg/GhwmX99ZT`;
+
+const ad4 = `꧁⎝ 𓆩༺✧༻𓆪 ⎠꧂
+. ݁₊ ⊹ . ݁RoyalsAds  ݁ . ⊹ ₊ ݁.
+゛RoyalsAds is a server where you can easily and effectively promote your media or your Discord server ⸝⸝.ᐟ
+゛Our server offers ⸝⸝.ᐟ⋆
+⌯⌲ 🚀 ❝Many channels for free and paid advertising of your Discord server.❞
+⌯⌲ 🚀 ❝The option to buy your own private channel.❞
+⌯⌲ 👥 ❝A friendly community that welcomes everyone.❞
+⌯⌲ 💸 ❝A server economy.❞
+⌯⌲ 🎉 ❝Weekly giveaways and periodic themed contests.❞
+⌯⌲ 💪 ❝An administration team that always provides fast and helpful support.❞
+⌯⌲ 🤝 ❝The possibility of partnerships. We do not require a minimum member count, so even small servers can become partners.❞
+𓏲 ๋࣭ ࣪ ꒰ঌWho are we looking for ໒꒱˖🎐
+ᯓ★ 👑 ❝Admins and partnership managers.❞
+ᯓ★ 💎 ❝Partners.❞
+ᯓ★ 💎 ❝An amazing community.❞
+ᯓ★ 👑 ❝You.❞
+꧁⎝ 𓆩༺✧༻𓆪 ⎠꧂
+Don't believe it? Check it out:
+Link: https://discord.gg/XvvGhhuB2g`;
+
+const ad5 = `🚀 **PLANETA REKLAM** 🌍
+Masz projekt, serwer albo social media i chcesz je wypromować?
+Tutaj Twoja reklama **naprawdę dociera do ludzi** 👀
+───────────────
+🔥 **NAJWAŻNIEJSZE:**
+✨ 20+ kanałów reklamowych — wrzucasz i lecisz z promocją
+👥 Aktywna społeczność — realni ludzie, realne zasięgi
+🎉 Częste konkursy 
+📂 Różne kategorie — wszystko w jednym miejscu
+🤝 Współprace — rozwijaj się szybciej z innymi
+🛠️ Sprawna administracja — porządek i szybka pomoc
+💸 Darmowa promocja — zaczynasz bez kosztów
+───────────────
+🎯 **DLA KOGO?**
+🚀 Dla twórców i właścicieli serwerów
+🤝 Dla partnerów
+💬 Dla aktywnych osób
+⭐ Dla tych, którzy chcą się rozwijać
+👉 Krótko: jeśli chcesz zasięgów — jesteś we właściwym miejscu
+───────────────
+🌟 **Dołącz i zacznij się promować już teraz!**
+🔗 https://discord.gg/CZKS48Ea3q`;
+
+const ad6 = `#  🌴  SUNNY SHOP 🌴 
+## 💸 ⨯ Najlepsza Jakość | Najlepsze Ceny | Błyskawiczna Obsługa
+## **🤔 ⨯ Co znajdziesz na naszym serwerze**
+> \`🎉\` **⨯** Konkursy ze świetnymi nagrodami!
+> \`✅\` **⨯** Duża ilość legit checków.
+> \`💸\` **⨯** Program partnerski - zarabiaj 0,80PLN za każde partnerstwo!
+## **✨ ⨯ Część naszego asortymentu:**
+- \`🛒\` **⨯** **USŁUGI D1SC0RD** -  S3rver B00sty, d3koracje, k0nta D1sc0rd, użytkownicy na serwer oraz N1tr0 B00ST za jedynie __15 PLN!__
+- \`🎬\` **⨯** **PLATFORMY VOD** - Netflix, HBO Max, Disney+ i inne - oglądaj taniej, bez ograniczeń!
+- \`📚\` **⨯** **NARZĘDZIA EDUKACYJNE** – K0nta ChatGPT, Odrabiamy oraz inne usługi pomocne w nauce czy pisaniu prac!
+- \`💸\` **⨯** **D0ŁADOWANIA DO GIER** - Nie przepłacaj u twórców - kupuj u nas, zawsze w dobrej cenie!
+- \`📢\` **⨯** **S0CIAL B00STING** - Obserwacje, polubienia i wyświetlenia na wielu platformach, rozwiń swoje profile!
+- \`🌍\` **⨯** **PRYWATNOŚĆ W SIECI** - Zakup odpowiedniego VPN - chroń swoją obecność w sieci!
+- \`🏅\` **⨯**  **H4ZARD ONLINE** - Dla fanów obstawiania i gier losowych!
+## \`🛒\` **⨯ DOŁĄCZ DO NAS I KUPUJ W ŚWIETNYCH CENACH!**  
+\`👋\` **⨯ Do zobaczenia na serwerze!** 
+\`🔗\` [Dołącz teraz!](https://discord.gg/sunnyshop)
+ N!TRO B00ST - 16,17ZL`;
+
+const ad7 = `#  🦔︲Taniej! - Nie tylko z nazwy!
 ## **⭐ ︲ Wiesz dlaczego klienci wybierają NAS?**
 > \`💸\` **︲** Najniższe ceny na całym rynku - dlatego nazywamy się "Taniej!" 🙂
 > \`⚡\` **︲** Profesjonalna i błyskawiczna obsługa zamówień
@@ -105,7 +194,7 @@ const ad2 = `#  🦔︲Taniej! - Nie tylko z nazwy!
 \`👋\` **︲ Do zobaczenia na serwerze!** 
 - \`🔗\` [Dołącz teraz!](https://discord.gg/ogtaniej)`;
 
-const ad3 = `#  🛒 CHERRY SHØP  🛒
+const ad8 = `#  🛒 CHERRY SHØP  🛒
 ## 💸 ⨯ Najlepsza Jakość | Najlepsze Ceny | Błyskawiczna Obsługa
 ## **🤔 ⨯ Co znajdziesz na naszym serwerze?**
 > \`⭐\` **⨯** Mega niskie ceny i ekspresowa realizacja zamówień!
@@ -126,7 +215,7 @@ const ad3 = `#  🛒 CHERRY SHØP  🛒
 \`👋\` **⨯ Do zobaczenia na serwerze!** 
 \`🔗\` [Dołącz teraz!](https://discord.gg/cherryshop)`;
 
-const ad4 = `# 💱 WITAJ NA WYMIENIASZ 💱
+const ad9 = `# 💱 WITAJ NA WYMIENIASZ 💱
 **Miejsce stworzone dla ludzi, którzy chcą wymieniać szybko, bezpiecznie i bez zbędnego gadania.**
 || @everyone ||
 ### Dlaczego Wymieniasz?
@@ -138,7 +227,7 @@ const ad4 = `# 💱 WITAJ NA WYMIENIASZ 💱
 ## AKTUALNIE TRWA KONKURS NA 50 PLN
 https://discord.gg/wymieniasz`;
 
-const ad5 = `## 💥 💰 ZGARNIJ KASĘ ZA OPINIĘ! 💰💥
+const ad10 = `## 💥 💰 ZGARNIJ KASĘ ZA OPINIĘ! 💰💥
 ** 3 ZŁOTE za JEDNĄ OPINIĘ – LEGALNIE, SZYBKO, BEZ KOMPLIKACJI! 🔥**
 👀 Masz 2 minuty?
 💬 Masz coś do powiedzenia?
@@ -159,7 +248,7 @@ Przeczytaj zasady i zacznij zarabiać!
 **🔔 DOŁĄCZ TERAZ I ZGARNIJ SWOJE PIERWSZE 3 ZŁ W PARĘ MINUT! 🔔**
 **Szukamy Realizatorow partnerstw 80gr/Partnerstwo**`;
 
-const ad6 = `## \`🛒\` **CITSH0P** × CENTRUM ZAKUPÓW
+const ad11 = `## \`🛒\` **CITSH0P** × CENTRUM ZAKUPÓW
 \`🎯\` **× Dlaczego my?**
 \`⏰\` **×** Najdłużej na rynku!
 -# Jesteśmy na rynku od ponad roku!
@@ -172,7 +261,7 @@ const ad6 = `## \`🛒\` **CITSH0P** × CENTRUM ZAKUPÓW
 > **Zapraszamy Cię do naszej społeczności!**
 > https://discord.gg/citshop`;
 
-const ad7 = `#  🛒 SZYBKI ZAKUP 🛒
+const ad12 = `#  🛒 SZYBKI ZAKUP 🛒
 ## 💸 ⨯ Najlepsza Jakość | Najlepsze Ceny | Błyskawiczna Obsługa
 ## **🤔 ⨯ Co znajdziesz na naszym serwerze?**
 > \`⭐\` **⨯** Mega niskie ceny i ekspresowa realizacja zamówień!
@@ -185,7 +274,7 @@ const ad7 = `#  🛒 SZYBKI ZAKUP 🛒
 - \`🛒\` **⨯** **USŁUGI D1SC0RD** -  S3rver B00sty, d3koracje, k0nta D1sc0rd, użytkownicy na serwer oraz N1tr0 B00ST za jedynie __25 PLN!__
 - \`🎬\` **⨯** **PLATFORMY VOD** - Netflix, HBO Max, Disney+ i inne - oglądaj taniej, bez ograniczeń!
 - \`📚\` **⨯** **NARZĘDZIA EDUKACYJNE** – K0nta ChatGPT, Odrabiamy oraz inne usługi pomocne w nauce czy pisaniu prac!
-- \`💸\` **⨯** **D0ŁADOWANIA DO GIER** - Nie przepłacaj u twórców - kupuj u nas, zawsze w dobiej cenie!
+- \`💸\` **⨯** **D0ŁADOWANIA DO GIER** - Nie przepłacaj u twórców - kupuj u nas, zawsze w dobrej cenie!
 - \`📢\` **⨯** **S0CIAL B00STING** - Obserwacje, polubienia i wyświetlenia na wielu platformach, rozwiń swoje profile!
 - \`🌍\` **⨯** **PRYWATNOŚĆ W SIECI** - Zakup odpowiedniego VPN - chroń swoją obecność w sieci!
 - \`📲\` **⨯**  **WERYFIKACJA SMS** - Szybkie numery tymczasowe do rejestracji wszędzie, gdzie potrzebujesz!
@@ -194,7 +283,7 @@ const ad7 = `#  🛒 SZYBKI ZAKUP 🛒
 \`👋\` **⨯ Do zobaczenia na serwerze!** 
 \`🔗\` [Dołącz teraz!](https://discord.gg/szybkizakup)`;
 
-const ad8 = `## Serwer gdzie tworzymy boty!
+const ad13 = `## Serwer gdzie tworzymy boty!
 > Hej chciałbyś na swoim discordzie mieć autorskiego bota gdzie wszystko jest **tak jak chcesz?** 
 * Benefity \`💻\`
 - **Szybki kontakt** \`📞\`
@@ -204,26 +293,7 @@ const ad8 = `## Serwer gdzie tworzymy boty!
 > Dołącz na naszego discorda już teraz!
 > https://discord.gg/dcboty`;
 
-const ALL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8];
-
-const MY_AD = `# 🛒 SKY SHØP
-Wbij na serwer, gdzie stawiamy przede wszystkim na uczciwe ceny, szybki kontakt i dobre podejście do klienta. Wszystko robimy tak, żeby zakupy były proste i bez stresu 😎
-💡\`Co zyskujesz dołączając na początku?\`
-* 🆕 Więcej uwagi i lepsze traktowanie (bez tłumów)
-* 💸 Dodatkowe zniżki dla pierwszych klientów
-* 🏆 Szansa na bonusy i przywileje dla aktywnych
-🎰 \`Strefa kasyno\`
-To coś, co naprawdę wyróżnia nasz serwer 👀
-Nie tylko robisz zakupy, ale też możesz się pobawić i coś przy okazji zgarnąć:
-* 🎲 różne gry hazardowe (i kolejne będą dochodzić)
-* 💰 zdobywanie monet za wygrane
-* 🔄 możliwość wymiany monet na środki do sklepu
-* 📈 rozwijany system – nowe gry, ulepszenia i więcej opcji z czasem
-🤖 \`Autorski bot\`
-Mamy własnego bota stworzonego pod kasyno, którego cały czas rozwijamy – wszystko robione pod ten serwer, a nie kopiowane 👀
-🔥 \`Wbij i sprawdź sam\`
-Jeśli szukasz dobrych cen, szybkiej obsługi i czegoś więcej niż zwykły sklep – to miejsce jest właśnie dla Ciebie.
-# 👉 [Wbij teraz!](https://discord.gg/snUV9wnJvR) 👈`;
+const ALL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8, ad9, ad10, ad11, ad12, ad13];
 
 // ===================== KANAŁY =====================
 
@@ -244,7 +314,7 @@ const messagedUsers = new Set();
 const partnerReminderUsers = new Set();
 
 const REMINDER_DELAY = 5 * 24 * 60 * 60 * 1000;
-const PARTNER_DM_DELAY = 5 * 24 * 60 * 60 * 1000 + 60 * 1000; // 5 dni + 1 minuta
+const PARTNER_DM_DELAY = 5 * 24 * 60 * 60 * 1000 + 60 * 1000;
 const pendingRenewals = new Map();
 
 // ===================== OCHRONA PRZED BANEM =====================
@@ -322,7 +392,7 @@ function startAutoAds() {
       try {
         const channel = await client.channels.fetch(id).catch(() => null);
         if (!channel) { console.error(`[autoAd] Nie znaleziono kanału ${id}`); return; }
-        await channel.send(MY_AD);
+        await channel.send(ad6); // SKY SHØP zastąpiony przez SUNNY SHOP jako "moja reklama"
         console.log(`[autoAd] Wysłano reklamę na kanał ${id}`);
       } catch (e) {
         console.error(`[autoAd] Błąd dla kanału ${id}:`, e.message);
@@ -334,7 +404,6 @@ function startAutoAds() {
 // ===================== EVENTY =====================
 
 client.on('messageCreate', async (message) => {
-  // ===== OBSERWOWANIE KANAŁU PARTNERSKIEGO (watch) =====
   if (message.channel.id === WATCH_CHANNEL_ID && !message.author.bot && message.createdTimestamp >= botStartTime) {
     const authorId = message.author.id;
     if (messagedUsers.has(authorId)) return;
@@ -353,9 +422,7 @@ client.on('messageCreate', async (message) => {
     return;
   }
 
-  // ===== OBSERWOWANIE KANAŁU LOGÓW PARTNERSKICH =====
   if (message.channel.id === PARTNER_LOG_CHANNEL_ID && message.createdTimestamp >= botStartTime) {
-    // Wyciągnij wszystkich oznaczonych użytkowników z wiadomości
     const mentionedUsers = message.mentions.users;
     if (mentionedUsers.size === 0) return;
 
@@ -373,7 +440,7 @@ client.on('messageCreate', async (message) => {
         } catch (e) {
           console.error(`[partnerLog] Błąd wysyłania DM do ${userId}:`, e.message);
         }
-        partnerReminderUsers.delete(userId); // usuń żeby można było znowu dostać przypomnienie
+        partnerReminderUsers.delete(userId);
       }, PARTNER_DM_DELAY);
     }
     return;

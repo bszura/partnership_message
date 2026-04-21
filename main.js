@@ -53,25 +53,12 @@ client.once('ready', async () => {
   await initDB();
   startReminderChecker();
   startAutoMessage();
-  startAutoAds();
 });
 
 // ===================== REKLAMY =====================
 
-const ad1 = `# \`❤️\` LUNARSHOP \`❤️\`
-## \`❤️\` Co oferujemy:
-> ** \`🛠️\` × Wysokiej jakości produkty!**
-> ** \`🛒\` × Niskie ceny i gwarancja**
-> ** \`📜\` × Regulamin stworzony z myślą o Waszym bezpieczeństwie i ochronie przed oszustwami!**
-## \`❓\` Dlaczego akurat my?
-> ** \`✅\` × Wielu zadowolonych klientów.**
-> ** \`🛒\` × Częste konkursy!**
-> ** \`💶\` × Masa promocji i restocku**
-##  \`🎯\` Nie wierzysz? Sprawdź sam!
-> ** \`🔗\` × [Kliknij Tutaj](https://discord.gg/F5zMCEwd5E) aby dołączyć do LUNARSHOP**
-> ||@everyone||`;
-
-const ad2 = `# 🐼 Panda Community - Razem tworzymy przestrzeń, w której każdy czuje się jak w domu! 🐼
+// ad1 = Panda Community
+const ad1 = `# 🐼 Panda Community - Razem tworzymy przestrzeń, w której każdy czuje się jak w domu! 🐼
 Szukasz miejsca gdzie **możesz pogadać z ludźmi o przeróżnych rzeczach**? 🚀
 **Dobrze trafiłeś/-aś**! ⚡
 ## ✨ Nasze mocne strony:
@@ -95,7 +82,8 @@ Szukasz miejsca gdzie **możesz pogadać z ludźmi o przeróżnych rzeczach**? �
 \` 💵 \` **Sponsorów** - wesprzyj nas i ciesz się przywilejami!
 # 👉 Nie czekaj i [**kliknij tutaj**](https://discord.gg/2FJjN9yaM3)  👈`;
 
-const ad3 = `🚀 GrowthZone
+// ad2 = Growth Zone
+const ad2 = `🚀 GrowthZone
 Masz serwer Discord i chcesz go rozwinąć?
 Szukasz miejsca, gdzie Twoja reklama nie zginie w spamie?
 🌟 GrowthZone to NOWY serwer promocyjny — startujemy całkowicie od zera!
@@ -116,7 +104,8 @@ Dołączasz do projektu, który budujemy od podstaw — razem.
 🚀 Wejdź do GrowthZone i bądź częścią startu 
 https://discord.gg/GhwmX99ZT`;
 
-const ad4 = `꧁⎝ 𓆩༺✧༻𓆪 ⎠꧂
+// ad3 = Royal Ads
+const ad3 = `꧁⎝ 𓆩༺✧༻𓆪 ⎠꧂
 . ݁₊ ⊹ . ݁RoyalsAds  ݁ . ⊹ ₊ ݁.
 ゛RoyalsAds is a server where you can easily and effectively promote your media or your Discord server ⸝⸝.ᐟ
 ゛Our server offers ⸝⸝.ᐟ⋆
@@ -136,7 +125,54 @@ const ad4 = `꧁⎝ 𓆩༺✧༻𓆪 ⎠꧂
 Don't believe it? Check it out:
 Link: https://discord.gg/XvvGhhuB2g`;
 
-const ad5 = `🚀 **PLANETA REKLAM** 🌍
+// ad4 = Opinie Google
+const ad4 = `## 💥 💰 ZGARNIJ KASĘ ZA OPINIĘ! 💰💥
+** 3 ZŁOTE za JEDNĄ OPINIĘ – LEGALNIE, SZYBKO, BEZ KOMPLIKACJI! 🔥**
+👀 Masz 2 minuty?
+💬 Masz coś do powiedzenia?
+📲 Masz Discorda?
+\`TO ZARABIASZ!\`
+Nie musisz inwestować ani złotówki – wystarczy, że podzielisz się swoją opinią!
+**✅ CO OFERUJEMY?**
+🔹 3 ZŁ za każdą zaakceptowaną opinię
+🔹 Proste zadania, zero ściemy
+🔹 Płacimy na: BLIK  / PayPal / Kod Blik/LTC
+🔹 Nowe zadania codziennie!
+🔹 Przyjazna ekipa i pomoc dla nowych
+**💡 JAK DOŁĄCZYĆ?**
+Kliknij link do serwera Discord 👉 https://discord.gg/AEUuHhh38Q
+Przeczytaj zasady i zacznij zarabiać!
+🌟 Już wiele użytkowników z nami zarabia 
+💸 Nie trać czasu – twoja opinia = twoje pieniądze!
+**🔔 DOŁĄCZ TERAZ I ZGARNIJ SWOJE PIERWSZE 3 ZŁ W PARĘ MINUT! 🔔**
+**Szukamy Realizatorow partnerstw 80gr/Partnerstwo**`;
+
+// ad5 = Flight Bots
+const ad5 = `## Serwer gdzie tworzymy boty!
+> Hej chciałbyś na swoim discordzie mieć autorskiego bota gdzie wszystko jest **tak jak chcesz?** 
+* Benefity \`💻\`
+- **Szybki kontakt** \`📞\`
+- **Profesjonalizm** \`📋\`
+- **Szybki czas realizacji** \`⌛\`
+- **Pozytwne opinie** \`💚\`
+> Dołącz na naszego discorda już teraz!
+> https://discord.gg/dcboty`;
+
+// ad6 = Wymieniasz
+const ad6 = `# 💱 WITAJ NA WYMIENIASZ 💱
+**Miejsce stworzone dla ludzi, którzy chcą wymieniać szybko, bezpiecznie i bez zbędnego gadania.**
+|| @everyone ||
+### Dlaczego Wymieniasz?
+**– Przejrzyste zasady i uczciwe prowizje
+– Szybkie realizacje bez przeciągania w czasie
+– Zweryfikowani realizatorzy i bezpieczny system ticketów
+– Regularne konkursy i eventy dla aktywnych
+– Stały rozwój serwera**
+## AKTUALNIE TRWA KONKURS NA 50 PLN
+https://discord.gg/wymieniasz`;
+
+// ad7 = Planeta reklam
+const ad7 = `🚀 **PLANETA REKLAM** 🌍
 Masz projekt, serwer albo social media i chcesz je wypromować?
 Tutaj Twoja reklama **naprawdę dociera do ludzi** 👀
 ───────────────
@@ -159,7 +195,22 @@ Tutaj Twoja reklama **naprawdę dociera do ludzi** 👀
 🌟 **Dołącz i zacznij się promować już teraz!**
 🔗 https://discord.gg/CZKS48Ea3q`;
 
-const ad6 = `#  🌴  SUNNY SHOP 🌴 
+// ad8 = Lunar shop
+const ad8 = `# \`❤️\` LUNARSHOP \`❤️\`
+## \`❤️\` Co oferujemy:
+> ** \`🛠️\` × Wysokiej jakości produkty!**
+> ** \`🛒\` × Niskie ceny i gwarancja**
+> ** \`📜\` × Regulamin stworzony z myślą o Waszym bezpieczeństwie i ochronie przed oszustwami!**
+## \`❓\` Dlaczego akurat my?
+> ** \`✅\` × Wielu zadowolonych klientów.**
+> ** \`🛒\` × Częste konkursy!**
+> ** \`💶\` × Masa promocji i restocku**
+##  \`🎯\` Nie wierzysz? Sprawdź sam!
+> ** \`🔗\` × [Kliknij Tutaj](https://discord.gg/F5zMCEwd5E) aby dołączyć do LUNARSHOP**
+> ||@everyone||`;
+
+// ad9 = Sunny shop
+const ad9 = `#  🌴  SUNNY SHOP 🌴 
 ## 💸 ⨯ Najlepsza Jakość | Najlepsze Ceny | Błyskawiczna Obsługa
 ## **🤔 ⨯ Co znajdziesz na naszym serwerze**
 > \`🎉\` **⨯** Konkursy ze świetnymi nagrodami!
@@ -178,90 +229,8 @@ const ad6 = `#  🌴  SUNNY SHOP 🌴
 \`🔗\` [Dołącz teraz!](https://discord.gg/sunnyshop)
  N!TRO B00ST - 16,17ZL`;
 
-const ad7 = `#  🦔︲Taniej! - Nie tylko z nazwy!
-## **⭐ ︲ Wiesz dlaczego klienci wybierają NAS?**
-> \`💸\` **︲** Najniższe ceny na całym rynku - dlatego nazywamy się "Taniej!" 🙂
-> \`⚡\` **︲** Profesjonalna i błyskawiczna obsługa zamówień
-> \`📦\` **︲** N1tr0 za 17PLN - działające na DOWOLNYM koncie
-> \`🚚\` **︲** Szeroka oferta: waluty do gier, follow na tiktok, streamingówki
-> \`🎮\` **︲** Konta ze skinami/grami, boty, programy i WIELE WIĘCEJ
-> \`🎉\` **︲** Regularne konkursy o dobre pieniądze
-> \`✅\` **︲** Bezpieczne transakcje - ponad 2,800 potwierdzonych zamówień
-> \`📩\` **︲** Poszukujemy Realizatorów Partnerstw, płacimy do 1,20 PLN
-> \`💸\` **︲** Zarobek za __zapraszanie znajomych__
-\`👟\` ︲**Jeśli jesteś wystarczająco szybki, odbierzesz u nas __darmowe N1tro lub pieniądze__**
-\`💰\` ︲**Sprzedasz u nas swoje __stare konto__ do gry**
-\`👋\` **︲ Do zobaczenia na serwerze!** 
-- \`🔗\` [Dołącz teraz!](https://discord.gg/ogtaniej)`;
-
-const ad8 = `#  🛒 CHERRY SHØP  🛒
-## 💸 ⨯ Najlepsza Jakość | Najlepsze Ceny | Błyskawiczna Obsługa
-## **🤔 ⨯ Co znajdziesz na naszym serwerze?**
-> \`⭐\` **⨯** Mega niskie ceny i ekspresowa realizacja zamówień!
-> \`🔧\` **⨯** Dopracowany serwer z profesjonalnym podejściem!
-> \`📦\` **⨯** Szeroka oferta pr0duktów!
-> \`🎉\` **⨯** Konkursy ze świetnymi nagrodami!
-> \`✅\` **⨯** Duża ilość legit checków.
-> \`💸\` **⨯** Program partnerski - zarabiaj 0,70 PLN za każde partnerstwo!
-## **✨ ⨯ Część naszego asortymentu:**
-- \`🛒\` **⨯** **USŁUGI D1SC0RD** -  S3rver B00sty, d3koracje, k0nta D1sc0rd, użytkownicy na serwer oraz N1tr0 B00ST za jedynie __18 PLN!__
-- \`🎬\` **⨯** **PLATFORMY VOD** - Netflix, HBO Max, Disney, Canal+ i inne - oglądaj taniej, bez ograniczeń!
-- \`📚\` **⨯** **NARZĘDZIA EDUKACYJNE** – K0nta ChatGPT, Odrabiamy oraz inne usługi pomocne w nauce czy pisaniu prac!
-- \`💸\` **⨯** **D0ŁADOWANIA DO GIER** - Nie przepłacaj u twórców - kupuj u nas, zawsze w dobrej cenie!
-- \`📢\` **⨯** **S0CIAL B00STING** - Obserwacje, polubienia i wyświetlenia na wielu platformach, rozwiń swoje profile!
-- \`🌍\` **⨯** **PRYWATNOŚĆ W SIECI** - Zakup odpowiedniego VPN - chroń swoją obecność w sieci!
-- \`📲\` **⨯**  **WERYFIKACJA SMS** - Szybkie numery tymczasowe do rejestracji wszędzie, gdzie potrzebujesz!
-## \`🛒\` **⨯ DOŁĄCZ DO NAS I KUPUJ W ŚWIETNYCH CENACH!**  
-\`👋\` **⨯ Do zobaczenia na serwerze!** 
-\`🔗\` [Dołącz teraz!](https://discord.gg/cherryshop)`;
-
-const ad9 = `# 💱 WITAJ NA WYMIENIASZ 💱
-**Miejsce stworzone dla ludzi, którzy chcą wymieniać szybko, bezpiecznie i bez zbędnego gadania.**
-|| @everyone ||
-### Dlaczego Wymieniasz?
-**– Przejrzyste zasady i uczciwe prowizje
-– Szybkie realizacje bez przeciągania w czasie
-– Zweryfikowani realizatorzy i bezpieczny system ticketów
-– Regularne konkursy i eventy dla aktywnych
-– Stały rozwój serwera**
-## AKTUALNIE TRWA KONKURS NA 50 PLN
-https://discord.gg/wymieniasz`;
-
-const ad10 = `## 💥 💰 ZGARNIJ KASĘ ZA OPINIĘ! 💰💥
-** 3 ZŁOTE za JEDNĄ OPINIĘ – LEGALNIE, SZYBKO, BEZ KOMPLIKACJI! 🔥**
-👀 Masz 2 minuty?
-💬 Masz coś do powiedzenia?
-📲 Masz Discorda?
-\`TO ZARABIASZ!\`
-Nie musisz inwestować ani złotówki – wystarczy, że podzielisz się swoją opinią!
-**✅ CO OFERUJEMY?**
-🔹 3 ZŁ za każdą zaakceptowaną opinię
-🔹 Proste zadania, zero ściemy
-🔹 Płacimy na: BLIK  / PayPal / Kod Blik/LTC
-🔹 Nowe zadania codziennie!
-🔹 Przyjazna ekipa i pomoc dla nowych
-**💡 JAK DOŁĄCZYĆ?**
-Kliknij link do serwera Discord 👉 https://discord.gg/AEUuHhh38Q
-Przeczytaj zasady i zacznij zarabiać!
-🌟 Już wiele użytkowników z nami zarabia 
-💸 Nie trać czasu – twoja opinia = twoje pieniądze!
-**🔔 DOŁĄCZ TERAZ I ZGARNIJ SWOJE PIERWSZE 3 ZŁ W PARĘ MINUT! 🔔**
-**Szukamy Realizatorow partnerstw 80gr/Partnerstwo**`;
-
-const ad11 = `## \`🛒\` **CITSH0P** × CENTRUM ZAKUPÓW
-\`🎯\` **× Dlaczego my?**
-\`⏰\` **×** Najdłużej na rynku!
--# Jesteśmy na rynku od ponad roku!
-\`💸\` **×** Najtaniej w Polsce!
--# Nasz cennik jest najbardziej korzystny!
-\`✅\` **×** Najbardziej zaufany!
--# Posiadamy legitne, doświadczone grono sprzedawców!
-\`🫡\` **×** Najwyższa jakość!
--# Większość naszych produktów jest objęta gwarancją!
-> **Zapraszamy Cię do naszej społeczności!**
-> https://discord.gg/citshop`;
-
-const ad12 = `#  🛒 SZYBKI ZAKUP 🛒
+// ad10 = Szybki zakup
+const ad10 = `#  🛒 SZYBKI ZAKUP 🛒
 ## 💸 ⨯ Najlepsza Jakość | Najlepsze Ceny | Błyskawiczna Obsługa
 ## **🤔 ⨯ Co znajdziesz na naszym serwerze?**
 > \`⭐\` **⨯** Mega niskie ceny i ekspresowa realizacja zamówień!
@@ -283,48 +252,89 @@ const ad12 = `#  🛒 SZYBKI ZAKUP 🛒
 \`👋\` **⨯ Do zobaczenia na serwerze!** 
 \`🔗\` [Dołącz teraz!](https://discord.gg/szybkizakup)`;
 
-const ad13 = `## Serwer gdzie tworzymy boty!
-> Hej chciałbyś na swoim discordzie mieć autorskiego bota gdzie wszystko jest **tak jak chcesz?** 
-* Benefity \`💻\`
-- **Szybki kontakt** \`📞\`
-- **Profesjonalizm** \`📋\`
-- **Szybki czas realizacji** \`⌛\`
-- **Pozytwne opinie** \`💚\`
-> Dołącz na naszego discorda już teraz!
-> https://discord.gg/dcboty`;
+// ad11 = Cherry shop
+const ad11 = `#  🛒 CHERRY SHØP  🛒
+## 💸 ⨯ Najlepsza Jakość | Najlepsze Ceny | Błyskawiczna Obsługa
+## **🤔 ⨯ Co znajdziesz na naszym serwerze?**
+> \`⭐\` **⨯** Mega niskie ceny i ekspresowa realizacja zamówień!
+> \`🔧\` **⨯** Dopracowany serwer z profesjonalnym podejściem!
+> \`📦\` **⨯** Szeroka oferta pr0duktów!
+> \`🎉\` **⨯** Konkursy ze świetnymi nagrodami!
+> \`✅\` **⨯** Duża ilość legit checków.
+> \`💸\` **⨯** Program partnerski - zarabiaj 0,70 PLN za każde partnerstwo!
+## **✨ ⨯ Część naszego asortymentu:**
+- \`🛒\` **⨯** **USŁUGI D1SC0RD** -  S3rver B00sty, d3koracje, k0nta D1sc0rd, użytkownicy na serwer oraz N1tr0 B00ST za jedynie __18 PLN!__
+- \`🎬\` **⨯** **PLATFORMY VOD** - Netflix, HBO Max, Disney, Canal+ i inne - oglądaj taniej, bez ograniczeń!
+- \`📚\` **⨯** **NARZĘDZIA EDUKACYJNE** – K0nta ChatGPT, Odrabiamy oraz inne usługi pomocne w nauce czy pisaniu prac!
+- \`💸\` **⨯** **D0ŁADOWANIA DO GIER** - Nie przepłacaj u twórców - kupuj u nas, zawsze w dobrej cenie!
+- \`📢\` **⨯** **S0CIAL B00STING** - Obserwacje, polubienia i wyświetlenia na wielu platformach, rozwiń swoje profile!
+- \`🌍\` **⨯** **PRYWATNOŚĆ W SIECI** - Zakup odpowiedniego VPN - chroń swoją obecność w sieci!
+- \`📲\` **⨯**  **WERYFIKACJA SMS** - Szybkie numery tymczasowe do rejestracji wszędzie, gdzie potrzebujesz!
+## \`🛒\` **⨯ DOŁĄCZ DO NAS I KUPUJ W ŚWIETNYCH CENACH!**  
+\`👋\` **⨯ Do zobaczenia na serwerze!** 
+\`🔗\` [Dołącz teraz!](https://discord.gg/cherryshop)`;
 
+// ad12 = Citshop
+const ad12 = `## \`🛒\` **CITSH0P** × CENTRUM ZAKUPÓW
+\`🎯\` **× Dlaczego my?**
+\`⏰\` **×** Najdłużej na rynku!
+-# Jesteśmy na rynku od ponad roku!
+\`💸\` **×** Najtaniej w Polsce!
+-# Nasz cennik jest najbardziej korzystny!
+\`✅\` **×** Najbardziej zaufany!
+-# Posiadamy legitne, doświadczone grono sprzedawców!
+\`🫡\` **×** Najwyższa jakość!
+-# Większość naszych produktów jest objęta gwarancją!
+> **Zapraszamy Cię do naszej społeczności!**
+> https://discord.gg/citshop`;
+
+// ad13 = Taniej
+const ad13 = `#  🦔︲Taniej! - Nie tylko z nazwy!
+## **⭐ ︲ Wiesz dlaczego klienci wybierają NAS?**
+> \`💸\` **︲** Najniższe ceny na całym rynku - dlatego nazywamy się "Taniej!" 🙂
+> \`⚡\` **︲** Profesjonalna i błyskawiczna obsługa zamówień
+> \`📦\` **︲** N1tr0 za 17PLN - działające na DOWOLNYM koncie
+> \`🚚\` **︲** Szeroka oferta: waluty do gier, follow na tiktok, streamingówki
+> \`🎮\` **︲** Konta ze skinami/grami, boty, programy i WIELE WIĘCEJ
+> \`🎉\` **︲** Regularne konkursy o dobre pieniądze
+> \`✅\` **︲** Bezpieczne transakcje - ponad 2,800 potwierdzonych zamówień
+> \`📩\` **︲** Poszukujemy Realizatorów Partnerstw, płacimy do 1,20 PLN
+> \`💸\` **︲** Zarobek za __zapraszanie znajomych__
+\`👟\` ︲**Jeśli jesteś wystarczająco szybki, odbierzesz u nas __darmowe N1tro lub pieniądze__**
+\`💰\` ︲**Sprzedasz u nas swoje __stare konto__ do gry**
+\`👋\` **︲ Do zobaczenia na serwerze!** 
+- \`🔗\` [Dołącz teraz!](https://discord.gg/ogtaniej)`;
+
+// ad1-ad7 = normalne, ad1-ad13 = wszystkie
+const NORMAL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7];
 const ALL_ADS = [ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8, ad9, ad10, ad11, ad12, ad13];
-
-// ZMIANA: nowa tablica reklam normalnych (tylko wybrane)
-const NORMAL_ADS = [ad2, ad3, ad4, ad5, ad9, ad10, ad13];
 
 // ===================== KANAŁY =====================
 
-// ZMIANA: stare PARTNER_CHANNELS usunięte, nowe listy kanałów
 const NORMAL_CHANNELS = [
-  '1400373678268612709', // 1
-  '1476649380143431793', // 2
-  '1406225658576900228', // 3
-  '1455561797821141094', // 4
-  '1296167863551529033', // 5
-  '1476241698207043636', // 6
-  '1489760556486234252', // 7
+  '1400373678268612709', // 1 - Panda Community
+  '1476649380143431793', // 2 - Growth Zone
+  '1406225658576900228', // 3 - Royal Ads
+  '1455561797821141094', // 4 - Opinie Google
+  '1296167863551529033', // 5 - Flight Bots
+  '1476241698207043636', // 6 - Wymieniasz
+  '1489760556486234252', // 7 - Planeta reklam
 ];
 
 const SHOP_CHANNELS = [
-  '1400373678268612709', // 1
-  '1476649380143431793', // 2
-  '1406225658576900228', // 3
-  '1455561797821141094', // 4
-  '1296167863551529033', // 5
-  '1476241698207043636', // 6
-  '1489760556486234252', // 7
-  '1427708850676568234', // 8
-  '1465726979188719870', // 9
-  '1429451429273141251', // 10
-  '1485664071234621440', // 11
-  '1449144356975149358', // 12
-  '1487559123166822460', // 13
+  '1400373678268612709', // 1  - Panda Community
+  '1476649380143431793', // 2  - Growth Zone
+  '1406225658576900228', // 3  - Royal Ads
+  '1455561797821141094', // 4  - Opinie Google
+  '1296167863551529033', // 5  - Flight Bots
+  '1476241698207043636', // 6  - Wymieniasz
+  '1489760556486234252', // 7  - Planeta reklam
+  '1427708850676568234', // 8  - Lunar shop
+  '1465726979188719870', // 9  - Sunny shop
+  '1429451429273141251', // 10 - Szybki zakup
+  '1485664071234621440', // 11 - Cherry shop
+  '1449144356975149358', // 12 - Citshop
+  '1487559123166822460', // 13 - Taniej
 ];
 
 const WATCH_CHANNEL_ID = '1346609247869337701';
@@ -400,26 +410,9 @@ function startAutoMessage() {
   }, 61 * 60 * 1000);
 }
 
-function startAutoAds() {
-  const autoAdChannels = [
-    { id: '1346609263681732710', interval: 31 * 60 * 1000 },
-    { id: '1346609266987110451', interval: 121 * 60 * 1000 },
-    { id: '1346609268375158834', interval: 11 * 60 * 1000 },
-  ];
 
-  for (const { id, interval } of autoAdChannels) {
-    setInterval(async () => {
-      try {
-        const channel = await client.channels.fetch(id).catch(() => null);
-        if (!channel) { console.error(`[autoAd] Nie znaleziono kanału ${id}`); return; }
-        await channel.send(ad6); // SUNNY SHOP - własna reklama
-        console.log(`[autoAd] Wysłano reklamę na kanał ${id}`);
-      } catch (e) {
-        console.error(`[autoAd] Błąd dla kanału ${id}:`, e.message);
-      }
-    }, interval);
-  }
-}
+
+  
 
 // ===================== EVENTY =====================
 
@@ -474,7 +467,6 @@ client.on('messageCreate', async (message) => {
 
   if (isMe) {
 
-    // ZMIANA: reklama wysyła tylko NORMAL_ADS
     if (content === 'reklama') {
       setTimeout(() => message.delete().catch(() => {}), 1000);
       for (const ad of NORMAL_ADS) {
@@ -484,7 +476,6 @@ client.on('messageCreate', async (message) => {
       return;
     }
 
-    // ZMIANA: nowa komenda reklama shop
     if (content === 'reklama shop') {
       setTimeout(() => message.delete().catch(() => {}), 1000);
       for (const ad of ALL_ADS) {
@@ -494,18 +485,15 @@ client.on('messageCreate', async (message) => {
       return;
     }
 
-    // ZMIANA: całkowicie przepisana komenda wstaw
     if (content.startsWith('wstaw')) {
       setTimeout(() => message.delete().catch(() => {}), 1000);
       const commandTimestamp = message.createdTimestamp;
       const parts = content.split(' ');
 
-      let mode = 'normal'; // 'normal' | 'shop' | 'custom'
+      let mode = 'normal';
       let timeStr, dateStr, numbersRaw;
 
-      // Rozpoznanie trybu
       if (parts.length >= 2 && parts[1] === 'shop') {
-        // wstaw shop <godzina> <data>
         if (parts.length < 4) {
           await message.channel.send("❕ Użycie: `wstaw shop <godzina> <data>`");
           return;
@@ -514,7 +502,6 @@ client.on('messageCreate', async (message) => {
         timeStr = parts[2];
         dateStr = parts[3];
       } else {
-        // wstaw <godzina> <data> [numery]
         if (parts.length < 3) {
           await message.channel.send("❕ Użycie: `wstaw <godzina> <data>` lub `wstaw <godzina> <data> <numery>`");
           return;
@@ -593,7 +580,6 @@ client.on('messageCreate', async (message) => {
         }
       }
 
-      // Komunikat końcowy
       let modeLabel = '';
       if (mode === 'normal') modeLabel = ' (tryb normalny)';
       else if (mode === 'shop') modeLabel = ' (tryb shop)';
@@ -625,7 +611,7 @@ client.on('messageCreate', async (message) => {
     if (answer.includes('tak')) {
       const remindAt = Date.now() + REMINDER_DELAY;
       await setReminder(message.author.id, remindAt);
-      await message.channel.send("✅ Super! Przypomnę Ci o partnerstwie za 5 dni.");
+      await message.channel.send("✅ Super! Przypomnię Ci o partnerstwie za 5 dni.");
       pendingRenewals.delete(message.author.id);
     } else if (answer.includes('nie')) {
       await message.channel.send("👋 Rozumiem! Do zobaczenia!");
